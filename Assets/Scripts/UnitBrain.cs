@@ -35,6 +35,10 @@ public class UnitBrain : MonoBehaviour, Movable, Alive
             move();
         }
         blocked = isBlocked();
+        if (blocked)
+        {
+            heading = Random.Range(0, 360);
+        }
     }
 
     public int getHealth()
@@ -54,13 +58,15 @@ public class UnitBrain : MonoBehaviour, Movable, Alive
 
     public bool isBlocked()
     {
+        
         return !_navMeshAgent.hasPath;
     }
 
     public void move()
     {
         float h = Mathf.Deg2Rad * heading;
-        Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
+        Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized * 0.5f;
+        Debug.DrawLine(transform.position, dest, Color.green);
         _navMeshAgent.destination = dest;
     }
 
