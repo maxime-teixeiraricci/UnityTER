@@ -1,13 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class UnitBrain : Movable, Alive
+public class UnitBrain : MonoBehaviour, Movable, Alive
 {
+    [Header("Unit Stats")]
+    [SerializeField]
     private int _currentHealth;
+    [SerializeField]
     private int _maxHealth;
+    [SerializeField]
+    private float _speed;
+    private NavMeshAgent _navMeshAgent;
+    
 
-    private double _speed;
+    public float heading;
+
+    [Header("Debug")]
+    public bool isMoving;
+    public bool blocked;
+
+
+    void Start()
+    {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _speed = _navMeshAgent.speed;
+    }
+
+    void Update()
+    {
+        if (isMoving)
+        {
+            move();
+        }
+        blocked = isBlocked();
+    }
 
     public int getHealth()
     {
@@ -26,12 +54,14 @@ public class UnitBrain : Movable, Alive
 
     public bool isBlocked()
     {
-        throw new System.NotImplementedException();
+        return !_navMeshAgent.hasPath;
     }
 
     public void move()
     {
-        throw new System.NotImplementedException();
+        float h = Mathf.Deg2Rad * heading;
+        Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
+        _navMeshAgent.destination = dest;
     }
 
 }
