@@ -14,12 +14,13 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
     private float _speed;
     private NavMeshAgent _navMeshAgent;
     private Inventory _inventory;
-    
+    public GameObject _bullet;
 
     public float heading;
 
     [Header("Debug")]
     public bool isMoving;
+    public bool isShooting;
     public bool blocked;
 
 
@@ -34,6 +35,11 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
         if (isMoving)
         {
             move();
+        }
+        if (isShooting || Input.GetKeyDown(KeyCode.Space))
+        {
+            shoot();
+            isShooting = !isShooting;
         }
         blocked = isBlocked();
         if (blocked)
@@ -69,6 +75,14 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
         Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
         Debug.DrawLine(transform.position, dest, Color.green);
         _navMeshAgent.destination = dest;
+    }
+
+    public void shoot()
+    {
+        GameObject bullet = Instantiate(_bullet, transform.position, Quaternion.identity);
+        float h = Mathf.Deg2Rad * heading;
+        bullet.GetComponent<BulletScript>().vect = new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
+
     }
 
     public void take(Item i)

@@ -20,7 +20,7 @@ public class SightManager : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         print("A " + other);
-        float h = _unitBrain.heading;
+        float h = Mathf.Deg2Rad * _unitBrain.heading;
         Vector3 A = new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
         Vector3 B = other.transform.position - transform.position;
         float angle = Vector3.Angle(A, B);
