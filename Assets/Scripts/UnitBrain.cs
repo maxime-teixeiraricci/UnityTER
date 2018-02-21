@@ -65,7 +65,7 @@ public class UnitBrain : MonoBehaviour, Movable, Alive
     public void move()
     {
         float h = Mathf.Deg2Rad * heading;
-        Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized * 0.5f;
+        Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
         Debug.DrawLine(transform.position, dest, Color.green);
         _navMeshAgent.destination = dest;
     }
