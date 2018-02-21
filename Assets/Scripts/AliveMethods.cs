@@ -5,8 +5,6 @@ using UnityEngine;
 public interface AliveMethods
 {
     int getHealth();
-    void setHealth(int value);
     int getMaxHealth();
-    void setMaxHealth(int value);
 
 }
