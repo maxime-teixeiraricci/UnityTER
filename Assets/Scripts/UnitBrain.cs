@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitBrain : MonoBehaviour, Movable, Alive
+public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
 {
     [Header("Unit Stats")]
     [SerializeField]
@@ -13,6 +13,7 @@ public class UnitBrain : MonoBehaviour, Movable, Alive
     [SerializeField]
     private float _speed;
     private NavMeshAgent _navMeshAgent;
+    private Inventory _inventory;
     
 
     public float heading;
@@ -70,4 +71,14 @@ public class UnitBrain : MonoBehaviour, Movable, Alive
         _navMeshAgent.destination = dest;
     }
 
+    public void take(Item i)
+    {
+        if (!_inventory.isFull())
+        {
+            if (_inventory.add(i))
+            {
+                i.getPicked();
+            }
+        }
+    }
 }
