@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface AliveMethods
 {
-    int GetHealth();
-    void SetHealth(int value);
-    int GetMaxHealth();
-    void SetMaxHealth(int value);
+    int getHealth();
+    void setHealth(int value);
+    int getMaxHealth();
+    void setMaxHealth(int value);
 
 }

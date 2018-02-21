@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface AliveActions
+[System.Serializable]
+public class Brain
 {
- 
+
 }
