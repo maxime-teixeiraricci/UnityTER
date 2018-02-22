@@ -15,6 +15,8 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
     private NavMeshAgent _navMeshAgent;
     private Inventory _inventory;
     public GameObject _bullet;
+    [SerializeField]
+    public Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     public float heading;
 
@@ -22,16 +24,22 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
     public bool isMoving;
     public bool isShooting;
     public bool blocked;
+    public string nameAction;
 
 
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _speed = _navMeshAgent.speed;
+
+        actions.Add("ACTION_MOVE", new ActionMove(this));
+        actions.Add("ACTION_IDLE", new ActionIdle(this));
+        actions.Add("ACTION_FIRE", new ActionFire(this));
     }
 
     void Update()
     {
+        /*
         if (isMoving)
         {
             move();
@@ -41,10 +49,16 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
             shoot();
             isShooting = !isShooting;
         }
+        */
         blocked = isBlocked();
         if (blocked)
         {
             heading = Random.Range(0, 360);
+        }
+
+        if (actions.ContainsKey(nameAction))
+        {
+            actions[nameAction].Do();
         }
     }
 
@@ -69,8 +83,10 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
         return !_navMeshAgent.hasPath;
     }
 
+    // ACTIONS //
     public void move()
     {
+        _navMeshAgent.isStopped = false;
         float h = Mathf.Deg2Rad * heading;
         Vector3 dest = transform.position + new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
         Debug.DrawLine(transform.position, dest, Color.green);
@@ -84,6 +100,13 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
         bullet.GetComponent<BulletScript>().vect = new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
 
     }
+
+    public void idle()
+    {
+        _navMeshAgent.isStopped = true;
+    }
+
+    /////////////
 
     public void take(Item i)
     {

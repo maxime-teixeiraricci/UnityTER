@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114917569405465368}
   - component: {fileID: 135046580099900212}
   - component: {fileID: 114214390983097066}
+  - component: {fileID: 54531558828202274}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -160,6 +161,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682863099648994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54531558828202274
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65286387593375568
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -199,12 +215,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dffbebc578dfae44bdb0657a8dc4173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 0
-  _maxHealth: 0
+  _currentHealth: 100
+  _maxHealth: 100
   _speed: 0
+  _bullet: {fileID: 1684289829089816, guid: 61a38a367f6027d4d81932c899077cc5, type: 2}
   heading: 0
   isMoving: 1
+  isShooting: 0
   blocked: 0
+  nameAction: 
 --- !u!135 &135046580099900212
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -242,7 +261,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
