@@ -11,7 +11,9 @@ public class ActionFire : Action
 
     override public void Do()
     {
-
+        Brain brain = _brain;
+        MethodsMovable method = (MethodsMovable)_brain._methods;
+        method.shoot();
         //_brain.shoot();
     }
 }
