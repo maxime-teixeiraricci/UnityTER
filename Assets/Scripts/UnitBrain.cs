@@ -13,8 +13,11 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
     [SerializeField]
     private float _speed;
     private NavMeshAgent _navMeshAgent;
+    [SerializeField]
     private Inventory _inventory;
     public GameObject _bullet;
+    [SerializeField]
+    private ItemBehavior _itemBehave;
     [SerializeField]
     public Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
@@ -35,6 +38,7 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
         actions.Add("ACTION_MOVE", new ActionMove(this));
         actions.Add("ACTION_IDLE", new ActionIdle(this));
         actions.Add("ACTION_FIRE", new ActionFire(this));
+        actions.Add("ACTION_TAKE", new ActionTake(this));
     }
 
     void Update()
@@ -106,16 +110,29 @@ public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
         _navMeshAgent.isStopped = true;
     }
 
+    public void take()
+    {
+        if (_itemBehave != null)
+        {
+            print(_itemBehave.getName());
+            this.take(_itemBehave);
+        }
+        
+    }
+
     /////////////
 
-    public void take(Item i)
+    public void take(ItemBehavior i)
     {
         if (!_inventory.isFull())
         {
             if (_inventory.add(i))
             {
                 i.getPicked();
+
+                _itemBehave = null;
             }
         }
     }
+
 }

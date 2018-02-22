@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface PickerActions {
 
-    void take(Item i);
+    void take(ItemBehavior i);
 }

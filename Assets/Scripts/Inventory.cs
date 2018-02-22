@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory{
+public class Inventory : MonoBehaviour{
 
-    private List<Item> _objets;
+    [SerializeField]
+    private List<Item> _objets = new List<Item>();
+    [SerializeField]
     private int _maxSize;
+    [SerializeField]
     private int _actualSize;
 
-    public bool add(Item i)
+    public bool add(ItemBehavior i)
     {
+        print("CACA");
+        print(i.getName());
         if (_actualSize < _maxSize && i.getSize() <= (_maxSize - _actualSize))
         {
-            _objets.Add(i); return true;
+            Item itemTake = new Item(i);
+            _objets.Add(itemTake);
+            print(_objets[0].getValue());
+            _actualSize += i.getSize();
+            return true;
         }
         else return false;
     }
