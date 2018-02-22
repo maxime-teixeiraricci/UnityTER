@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ActionFire : Action
 {
-    public ActionFire(UnitBrain brain)
+    public ActionFire(Brain brain)
     {
-        _unitBrain = brain;
+        _brain = brain;
     }
 
     override public void Do()
     {
-        _unitBrain.shoot();
+
+        //_brain.shoot();
     }
 }

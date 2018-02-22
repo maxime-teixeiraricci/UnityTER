@@ -9,7 +9,7 @@ public class Sight : MonoBehaviour
     [SerializeField]
     public List<GameObject> _listOfCollision;
     public SphereCollider _sphereCollider;
-    public UnitBrain _unitBrain;
+    public Brain _brain;
 
 	// Use this for initialization
 	void Start ()
@@ -20,7 +20,7 @@ public class Sight : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         print("A " + other);
-        float h = Mathf.Deg2Rad * _unitBrain.heading;
+        float h = 0;
         Vector3 A = new Vector3(Mathf.Sin(h), 0, Mathf.Cos(h)).normalized;
         Vector3 B = other.transform.position - transform.position;
         float angle = Vector3.Angle(A, B);

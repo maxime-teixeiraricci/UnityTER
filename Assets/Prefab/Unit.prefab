@@ -42,12 +42,15 @@ GameObject:
   - component: {fileID: 23907492687566064}
   - component: {fileID: 195493812566919190}
   - component: {fileID: 135046580099900212}
-  - component: {fileID: 54120113664077590}
+  - component: {fileID: 54139442072827940}
   - component: {fileID: 114949334179232424}
   - component: {fileID: 114917569405465368}
   - component: {fileID: 114214390983097066}
   - component: {fileID: 114599275282398372}
   - component: {fileID: 114259867728414132}
+  - component: {fileID: 114839424898076026}
+  - component: {fileID: 114640989868227110}
+  - component: {fileID: 114782134324410890}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -164,7 +167,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682863099648994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54120113664077590
+--- !u!54 &54139442072827940
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -206,7 +209,7 @@ MonoBehaviour:
   _distance: 5
   _listOfCollision: []
   _sphereCollider: {fileID: 135046580099900212}
-  _unitBrain: {fileID: 114917569405465368}
+  _brain: {fileID: 0}
 --- !u!114 &114259867728414132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213656213c4902c4f948b777f7075b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxSize: 0
+  _actualSize: 0
 --- !u!114 &114599275282398372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,7 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf17943336f7147ae42807821f1770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114917569405465368
+  _heading: 0
+--- !u!114 &114640989868227110
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -237,18 +243,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848496013514230}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15098624cf1ad4c449b5d4ae0295a0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114782134324410890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5b856beb9fbff42a509e7c98ee9e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114839424898076026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa7b92dec9baf34782388a22c9f006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions: {fileID: 114782134324410890}
+  _methods: {fileID: 114640989868227110}
+--- !u!114 &114917569405465368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dffbebc578dfae44bdb0657a8dc4173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _actions: {fileID: 0}
+  _methods: {fileID: 0}
   _currentHealth: 100
   _maxHealth: 100
   _speed: 0
+  _inventory: {fileID: 0}
   _bullet: {fileID: 1684289829089816, guid: 61a38a367f6027d4d81932c899077cc5, type: 2}
+  _itemBehave: {fileID: 0}
   heading: 0
   isMoving: 1
-  isShooting: 0
+  isShooting: 1
   blocked: 0
-  nameAction: 
+  nameAction: ACTION_TAKE
 --- !u!114 &114949334179232424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,10 +305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5119d6a15d87d48bd30f9db193dbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 114599275282398372}
-  inventory: {fileID: 114259867728414132}
-  sight: {fileID: 114214390983097066}
-  percept: {fileID: 0}
+  _stats: {fileID: 114599275282398372}
+  _inventory: {fileID: 114259867728414132}
+  _sight: {fileID: 114214390983097066}
+  _brain: {fileID: 114839424898076026}
+  _percept: {fileID: 0}
 --- !u!135 &135046580099900212
 SphereCollider:
   m_ObjectHideFlags: 1

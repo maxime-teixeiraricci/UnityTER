@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ActionIdle : Action
 {
-    public ActionIdle(UnitBrain brain)
+    public ActionIdle(Brain brain)
     {
-        _unitBrain = brain;
+        _brain = brain;
     }
 
     override public void Do()
     {
-        _unitBrain.idle();
+        //_brain.idle();
     }
 }

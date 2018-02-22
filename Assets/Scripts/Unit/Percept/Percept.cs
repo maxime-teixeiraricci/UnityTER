@@ -5,7 +5,7 @@ using UnityEngine;
 public class Percept : MonoBehaviour
 {
     public string _perceptName;
-    public UnitBrain _unitBrain;
+    public Brain _brain;
     public bool value;
 
 }

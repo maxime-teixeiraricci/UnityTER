@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ActionTake : Action
 {
-    public ActionTake(UnitBrain brain)
+    public ActionTake(Brain brain)
     {
-        _unitBrain = brain;
+        _brain = brain;
     }
 
     override public void Do()
     {
-        _unitBrain.take();
+        //_brain.take();
     }
 }

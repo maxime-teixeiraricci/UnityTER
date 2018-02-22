@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitBrain : MonoBehaviour, Movable, Alive, Picker
+public class ExplorerBrain : Brain, Movable, Alive, Picker
 {
     [Header("Unit Stats")]
     [SerializeField]

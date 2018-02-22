@@ -5,15 +5,15 @@ using UnityEngine;
 public class UnitManager : MonoBehaviour
 {
     [Header("Stats")]
-    public Stats stats;
+    public Stats _stats;
     [Header("Inventory")]
-    public Inventory inventory;
+    public Inventory _inventory;
     [Header("Sight Field")]
-    public Sight sight;
+    public Sight _sight;
     [Header("Brain")]
-    //public Brain brain;
+    public Brain _brain;
     [Header("Percept")]
-    public Percept percept;
+    public Percept _percept;
     
     //
 }

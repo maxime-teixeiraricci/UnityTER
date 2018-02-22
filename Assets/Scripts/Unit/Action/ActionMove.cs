@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ActionMove : Action
 {
-    public ActionMove(UnitBrain brain)
+    public ActionMove(Brain brain)
     {
-        _unitBrain = brain;
+        _brain = brain;
     }
 
     override public void Do()
     {
-        _unitBrain.move();
+        Brain brain = _brain;
+        MethodsMovable method = (MethodsMovable) _brain._methods;
+        method.move();
     }
 }

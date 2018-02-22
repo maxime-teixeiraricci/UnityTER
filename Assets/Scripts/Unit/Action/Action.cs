@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Action : MonoBehaviour
+public abstract class Action
 {
-    public string _actionName;
-    public UnitBrain _unitBrain;
-
+    public Brain _brain;
     abstract public void Do();
     
 }

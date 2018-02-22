@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    public Dictionary<string, Object> stats;
+    public float _heading;
+    //public Dictionary<string, Object> stats;
 }
