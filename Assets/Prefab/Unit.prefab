@@ -41,13 +41,16 @@ GameObject:
   - component: {fileID: 136885581270569286}
   - component: {fileID: 23907492687566064}
   - component: {fileID: 195493812566919190}
-  - component: {fileID: 114917569405465368}
   - component: {fileID: 135046580099900212}
+  - component: {fileID: 54120113664077590}
+  - component: {fileID: 114949334179232424}
+  - component: {fileID: 114917569405465368}
   - component: {fileID: 114214390983097066}
-  - component: {fileID: 54531558828202274}
+  - component: {fileID: 114599275282398372}
+  - component: {fileID: 114259867728414132}
   m_Layer: 0
   m_Name: Unit
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +164,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682863099648994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54531558828202274
+--- !u!54 &54120113664077590
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -204,6 +207,28 @@ MonoBehaviour:
   _listOfCollision: []
   _sphereCollider: {fileID: 135046580099900212}
   _unitBrain: {fileID: 114917569405465368}
+--- !u!114 &114259867728414132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213656213c4902c4f948b777f7075b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114599275282398372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcf17943336f7147ae42807821f1770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114917569405465368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,6 +249,21 @@ MonoBehaviour:
   isShooting: 0
   blocked: 0
   nameAction: 
+--- !u!114 &114949334179232424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5119d6a15d87d48bd30f9db193dbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 114599275282398372}
+  inventory: {fileID: 114259867728414132}
+  sight: {fileID: 114214390983097066}
+  percept: {fileID: 0}
 --- !u!135 &135046580099900212
 SphereCollider:
   m_ObjectHideFlags: 1

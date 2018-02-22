@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SightManager : MonoBehaviour
+public class Sight : MonoBehaviour
 {
     public float _angle;
     public float _distance;

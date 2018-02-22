@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Movable : MoveActions, MoveMethods
+public interface MoveActions
 {
+    void move();
 }
