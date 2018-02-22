@@ -12,5 +12,8 @@ public class ActionIdle : Action
     override public void Do()
     {
         //_brain.idle();
+        Brain brain = _brain;
+        MethodsIdler method = (MethodsIdler)_brain._methods;
+        method.idle();
     }
 }
