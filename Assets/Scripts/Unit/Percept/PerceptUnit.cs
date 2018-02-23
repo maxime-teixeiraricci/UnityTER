@@ -16,10 +16,14 @@ public class PerceptUnit : Percept {
         Brain brain = GetComponent<Brain>();
         Sight sight = brain.GetComponent<Sight>();
         List<GameObject> _listOfUnitColl = new List<GameObject>();
-        foreach(GameObject gO in sight._listOfCollision){
-            if(gO.GetComponent<UnitManager>() != null)
+        foreach (GameObject gO in sight._listOfCollision){
+            UnitManager gOmanager = gO.GetComponent<UnitManager>();
+            if (gO.GetComponent<UnitManager>() != null)
             {
-                _listOfUnitColl.Add(gO);
+                if (!gOmanager.GetComponent<Stats>()._myTeam.equals(GetComponent<Stats>()._myTeam))
+                {
+                    _listOfUnitColl.Add(gO);
+                }
             }
         }
         if (_listOfUnitColl.Count > 0)
