@@ -13,13 +13,10 @@ public class Inventory : MonoBehaviour{
 
     public bool add(ItemBehavior i)
     {
-        print("CACA");
-        print(i.getName());
         if (_actualSize < _maxSize && i.getSize() <= (_maxSize - _actualSize))
         {
             Item itemTake = new Item(i);
             _objets.Add(itemTake);
-            print(_objets[0].getValue());
             _actualSize += i.getSize();
             return true;
         }
