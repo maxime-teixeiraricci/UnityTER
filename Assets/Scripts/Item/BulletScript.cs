@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float lifeTime;
-    public Vector3 vect;
-    public float speed;
-    public int damage;
+    public float _lifeTime;
+    public Vector3 _vect;
+    public float _speed;
+    public int _damage;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update ()
     {
-        transform.position += vect.normalized * Time.deltaTime * speed;
-        lifeTime -= Time.deltaTime;
-        if (lifeTime < 0f)
+        transform.position += _vect.normalized * Time.deltaTime * _speed;
+        _lifeTime -= Time.deltaTime;
+        if (_lifeTime < 0f)
         {
             Destroy(gameObject);
         }
