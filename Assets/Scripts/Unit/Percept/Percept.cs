@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class Percept : MonoBehaviour
 {
     public string _perceptName;
-    public bool value;
+    public bool _value;
+    public GameObject _gameObject;
 
     public abstract void update();
 
