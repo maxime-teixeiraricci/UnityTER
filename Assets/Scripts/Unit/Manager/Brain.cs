@@ -8,9 +8,10 @@ public class Brain : MonoBehaviour
     public ActionManager[] _actions;
 
 
+
     void Update()
     {
-        _actions[0].Do();
+        _actions[0].Do(); // Move
     }
 
 }
