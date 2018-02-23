@@ -12,8 +12,8 @@ public class UnitManager : MonoBehaviour
     public Sight _sight;
     [Header("Brain")]
     public Brain _brain;
-    [Header("Percept")]
-    public Percept _percept;
+    [Header("Percept Manager")]
+    public PerceptManager _percept;
     
     //
 }

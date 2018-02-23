@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PerceptManager : MonoBehaviour {
+    public class PerceptManager : MonoBehaviour
+    {
+    public PerceptStructure[] _percepts;
 
-    public Dictionary<string, Percept> _percepts = new Dictionary<string, Percept>();
-    private Brain _brain;
+
+    void Update()
+    {
+        _percepts[0].Do();
+    }
 }
+    
