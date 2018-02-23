@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class ActionManagerMovable : ActionManager {
 
     void Awake()
@@ -14,3 +14,4 @@ public class ActionManagerMovable : ActionManager {
         
     }
 }
+*/

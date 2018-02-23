@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public abstract class Action
+public abstract class Action : MonoBehaviour
 {
-    public Brain _brain;
     abstract public void Do();
-    
 }

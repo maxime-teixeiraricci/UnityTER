@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ActionManager : MonoBehaviour
+[System.Serializable]
+public struct ActionManager
 {
-    public Dictionary<string, Action> _actions = new Dictionary<string, Action>();
-    private Brain _brain;
+    public string _name;
+    public Action _action;
 
-    
+    public void Do()
+    {
+        _action.Do();
+    }
 }

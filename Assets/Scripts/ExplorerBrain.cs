@@ -32,13 +32,7 @@ public class ExplorerBrain : Brain, Movable, Alive, Picker
 
     void Start()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _speed = _navMeshAgent.speed;
-
-        actions.Add("ACTION_MOVE", new ActionMove(this));
-        actions.Add("ACTION_IDLE", new ActionIdle(this));
-        actions.Add("ACTION_FIRE", new ActionFire(this));
-        actions.Add("ACTION_TAKE", new ActionTake(this));
+      
     }
 
     void Update()
