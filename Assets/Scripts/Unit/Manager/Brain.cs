@@ -12,8 +12,8 @@ public class Brain : MonoBehaviour
     void Update()
     {
         PerceptStructure[] listePercepts = GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts;
-        if (!listePercepts[0]._percept._value)
-            _actions[0].Do(); // Move
+       /* if (!listePercepts[0]._percept._value)
+            _actions[0].Do(); // Move*/
     }
 
 }
