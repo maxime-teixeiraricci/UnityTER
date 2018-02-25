@@ -452,16 +452,6 @@ Prefab:
       propertyPath: m_Name
       value: SimpleUnit
       objectReference: {fileID: 0}
-    - target: {fileID: 114063663080662672, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: _offset
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114063663080662672, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: speed
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b9b5f30b9835b428d78526b72852bc, type: 2}
   m_IsPrefabParent: 0

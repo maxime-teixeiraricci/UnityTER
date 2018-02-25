@@ -15,7 +15,7 @@ public class MovableCharacter : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
        
         Move();
@@ -29,7 +29,7 @@ public class MovableCharacter : MonoBehaviour
         vectMov = new Vector3(Mathf.Cos(h), 0, Mathf.Sin(h));
         Vector3 nextposition = transform.position + vectMov.normalized * speed * Time.deltaTime;
         
-        if (Physics.Raycast(nextposition + nextposition.normalized * _offset, Vector3.down, 5))
+        if (Physics.Raycast(nextposition + vectMov.normalized * _offset, Vector3.down, 1.5f))
         {
             _isblocked = false;
             transform.position = nextposition;
