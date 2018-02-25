@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 33636706086583860}
   - component: {fileID: 136885581270569286}
   - component: {fileID: 23907492687566064}
-  - component: {fileID: 195493812566919190}
   - component: {fileID: 135046580099900212}
   - component: {fileID: 54139442072827940}
   - component: {fileID: 114949334179232424}
@@ -48,8 +47,9 @@ GameObject:
   - component: {fileID: 114599275282398372}
   - component: {fileID: 114259867728414132}
   - component: {fileID: 114839424898076026}
-  - component: {fileID: 114103056815450106}
-  - component: {fileID: 114140764873381200}
+  - component: {fileID: 114244225012411868}
+  - component: {fileID: 114063663080662672}
+  - component: {fileID: 114945047088613984}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848496013514230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7572665, y: 0.61, z: 6.877874}
+  m_LocalPosition: {x: 2.7683387, y: 1, z: -2.4633062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4660671219514916}
@@ -176,7 +176,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -193,7 +193,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114103056815450106
+--- !u!114 &114063663080662672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -201,23 +201,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848496013514230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ebc2e3531bc1d44af600ac5a13a344, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b668cacddc94d44da91e5c0b69c4344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _percepts:
-  - _name: 
-    _percept: {fileID: 0}
---- !u!114 &114140764873381200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f17be103275714787ff832fbf7f6e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  speed: 1
+  vectMov: {x: 0, y: 0, z: 0}
+  _isblocked: 0
+  _offset: 2
 --- !u!114 &114214390983097066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,11 +219,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8342934568549443a33733493eddc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _angle: 90
+  _angle: 60
   _distance: 5
-  _listOfCollision: []
   _sphereCollider: {fileID: 135046580099900212}
   _brain: {fileID: 114839424898076026}
+  _listOfCollision: []
+--- !u!114 &114244225012411868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ebc2e3531bc1d44af600ac5a13a344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _percepts: []
 --- !u!114 &114259867728414132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,6 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heading: 0
+  _myTeam: {fileID: 0}
+  _isBlocked: 0
 --- !u!114 &114839424898076026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,7 +276,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actions:
   - _name: ACTION_MOVE
-    _action: {fileID: 114140764873381200}
+    _action: {fileID: 114945047088613984}
+--- !u!114 &114945047088613984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f17be103275714787ff832fbf7f6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114949334179232424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,7 +303,7 @@ MonoBehaviour:
   _inventory: {fileID: 114259867728414132}
   _sight: {fileID: 114214390983097066}
   _brain: {fileID: 114839424898076026}
-  _percept: {fileID: 114103056815450106}
+  _percept: {fileID: 114244225012411868}
 --- !u!135 &135046580099900212
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -314,24 +329,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &195493812566919190
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 7
-  m_ObstacleAvoidanceType: 4
