@@ -6,6 +6,7 @@ using UnityEngine;
 public class Brain : MonoBehaviour
 {
     public ActionManager[] _actions;
+    public bool _debugShoot;
 
 
 
@@ -15,6 +16,11 @@ public class Brain : MonoBehaviour
         if (!listePercepts[0]._percept._value)
             _actions[0].Do(); // Move*/
         _actions[0].Do();
+        if (_debugShoot)
+        {
+            _actions[1].Do();
+            _debugShoot = false;
+        }
     }
 
 }

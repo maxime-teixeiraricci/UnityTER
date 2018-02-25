@@ -8,6 +8,8 @@ public class Stats : MonoBehaviour
     public float _heading;
     public Team _myTeam;
     public bool _isBlocked;
+    public int _health;
+    public int _maxHealth;
     //public Dictionary<string, Object> stats;
 
     void Update()

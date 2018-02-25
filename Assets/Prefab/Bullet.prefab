@@ -95,10 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e52f27e3a8322641953f26b61d07bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
-  vect: {x: 1, y: 0, z: 1}
-  speed: 15
-  damage: 0
+  _lifeTime: 1.5
+  _vect: {x: 0, y: 0, z: 0}
+  _speed: 20
+  _damage: 20
 --- !u!135 &135835175235395026
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -106,7 +106,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684289829089816}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

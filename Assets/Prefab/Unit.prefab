@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 114244225012411868}
   - component: {fileID: 114063663080662672}
   - component: {fileID: 114945047088613984}
+  - component: {fileID: 114812733687718738}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -250,6 +251,20 @@ MonoBehaviour:
   _heading: 0
   _myTeam: {fileID: 0}
   _isBlocked: 0
+  _health: 100
+  _maxHealth: 100
+--- !u!114 &114812733687718738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e79cd8079516d40a93d909e3ce54a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 1684289829089816, guid: 61a38a367f6027d4d81932c899077cc5, type: 2}
 --- !u!114 &114839424898076026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,7 +278,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actions:
   - _name: ACTION_MOVE
-    _action: {fileID: 0}
+    _action: {fileID: 114945047088613984}
+  - _name: ACTION_SHOOT
+    _action: {fileID: 114812733687718738}
+  _debugShoot: 1
 --- !u!114 &114945047088613984
 MonoBehaviour:
   m_ObjectHideFlags: 1

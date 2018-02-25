@@ -21,6 +21,7 @@ public class Sight : MonoBehaviour
 
     void Update()
     {
+        /*
         for(int i = 0; i < 360; i +=1)
         {
             float h = GetComponent<UnitManager>()._stats._heading * Mathf.Deg2Rad;
@@ -33,7 +34,7 @@ public class Sight : MonoBehaviour
             {
                 Debug.DrawLine(transform.position, transform.position + B, Color.blue);
             }
-        }
+        }*/
     }
 
     
