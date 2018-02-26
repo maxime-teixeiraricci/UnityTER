@@ -20,7 +20,7 @@ public class PerceptUnit : Percept {
             UnitManager gOmanager = gO.GetComponent<UnitManager>();
             if (gO.GetComponent<UnitManager>() != null)
             {
-                if (!gOmanager.GetComponent<Stats>()._myTeam.equals(GetComponent<Stats>()._myTeam))
+                if (!(gOmanager.GetComponent<Stats>()._myTeam == (GetComponent<Stats>()._myTeam)))
                 {
                     _listOfUnitColl.Add(gO);
                 }

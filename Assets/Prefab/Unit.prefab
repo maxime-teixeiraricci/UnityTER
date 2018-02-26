@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heading: 0
+  _myTeam: 0
 --- !u!114 &114839424898076026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,9 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa7b92dec9baf34782388a22c9f006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actions:
-  - _name: ACTION_MOVE
-    _action: {fileID: 114140764873381200}
+  _instructions: []
 --- !u!114 &114949334179232424
 MonoBehaviour:
   m_ObjectHideFlags: 1
