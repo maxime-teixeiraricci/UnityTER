@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class PerceptManager : MonoBehaviour
+public class PerceptManager : MonoBehaviour
     {
     public PerceptStructure[] _percepts;
 
@@ -10,6 +10,15 @@ using UnityEngine;
     void Update()
     {
         //_percepts[0].Do();
+    }
+
+    public PerceptStructure findPercept(string percepts)
+    {
+        foreach (PerceptStructure ps in _percepts)
+        {
+            if (ps._name.Equals(percepts)) { return ps; }
+        }
+        return null;
     }
 }
     

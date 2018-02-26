@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Brain : MonoBehaviour
 {
-    public ActionManager[] _actions;
+    public ActionStructure[] _actions;
     public bool _debugShoot;
 
 

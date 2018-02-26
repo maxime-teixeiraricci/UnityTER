@@ -16,6 +16,7 @@ public class ActionSimpleMove : Action
         _navMeshAgent.destination = transform.position + vectMove.normalized;
         print(_navMeshAgent.destination);
         */
+        GetComponent<MovableCharacter>().Move();
     }
 
 }

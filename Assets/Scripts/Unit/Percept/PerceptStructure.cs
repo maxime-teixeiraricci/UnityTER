@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct PerceptStructure
+public class PerceptStructure
 {
     private Brain _brain;
     public string _name;

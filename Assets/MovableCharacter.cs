@@ -8,22 +8,17 @@ public class MovableCharacter : MonoBehaviour
     public Vector3 vectMov;
     public bool _isblocked;
     public float _offset;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+    	
 	// Update is called once per frame
 	void FixedUpdate () {
 
        
-        Move();
+        
 
     }
     
 
-    void Move()
+    public void Move()
     {
         float h = GetComponent<UnitManager>()._stats._heading * Mathf.Deg2Rad;
         vectMov = new Vector3(Mathf.Cos(h), 0, Mathf.Sin(h));
