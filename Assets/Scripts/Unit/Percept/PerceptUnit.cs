@@ -29,7 +29,9 @@ public class PerceptUnit : Percept {
         if (_listOfUnitColl.Count > 0)
         {
             _value = true;
+            
             _gameObject = _listOfUnitColl[0];
+            GetComponent<Stats>()._heading = getAngle();
         }
         else
         {
@@ -38,4 +40,12 @@ public class PerceptUnit : Percept {
         }
     }
 
+    public int getAngle()
+    {
+        Vector3 vect = _gameObject.transform.position - transform.position;
+        Vector3 projVect = Vector3.ProjectOnPlane(vect, Vector3.up);
+
+        return (int)(Vector3.Angle(vect, new Vector3(1,0,0))) - 90;
+
+    }
 }

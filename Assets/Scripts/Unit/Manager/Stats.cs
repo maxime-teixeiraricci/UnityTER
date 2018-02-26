@@ -14,11 +14,20 @@ public class Stats : MonoBehaviour
 
     void Update()
     {
-        _heading = -transform.eulerAngles.y + 90;
+        //_heading = -transform.eulerAngles.y + 90;
+        _heading = (_heading + 360) % 360;
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, 90 - _heading , transform.eulerAngles.z);
         _isBlocked = GetComponent<MovableCharacter>()._isblocked;
         if (_isBlocked)
         {
-            transform.eulerAngles = new Vector3(0,Random.Range(0, 360),0);
+            _heading = Random.Range(0, 360);
+        }
+
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
+
+    
 }

@@ -9,7 +9,10 @@ public class PerceptManager : MonoBehaviour
 
     void Update()
     {
-        //_percepts[0].Do();
+        foreach (Percept p in _percepts)
+        {
+            p.update();
+        }
     }
 
    

@@ -23,7 +23,6 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        print(""+ other.gameObject + " =? "+ gameObject);
         if (!other.isTrigger && other.GetComponent<Stats>() && other.gameObject != _owner.gameObject)
         {
             other.GetComponent<Stats>()._health -= _damage;

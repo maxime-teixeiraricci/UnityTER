@@ -19,6 +19,7 @@ public class Brain : MonoBehaviour
             if (actionPossible != null && instr.verify())
             {
                 actionPossible.Do();
+                print("" + actionPossible.ToString());
                 break;
             }
         }
