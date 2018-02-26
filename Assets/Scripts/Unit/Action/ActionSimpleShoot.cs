@@ -9,6 +9,7 @@ public class ActionSimpleShoot : Action
     public override void Do()
     {
         GameObject bullet = Instantiate(_bullet, this.transform.position, Quaternion.identity);
+        bullet.GetComponent<BulletScript>()._owner = gameObject;
         bullet.GetComponent<BulletScript>()._vect = transform.forward;
     }
 

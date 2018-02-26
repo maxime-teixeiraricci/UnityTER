@@ -9,7 +9,7 @@ using UnityEngine;
 
     void Update()
     {
-        _percepts[0].Do();
+        //_percepts[0].Do();
     }
 }
     

@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class Brain : MonoBehaviour
 {
-    public Instruction[] _instructions;
-    public ActionStructure[] _actionsPossibles; //non pris en compte pour le moment.
+    public ActionManager[] _actions;
+    public bool _debugShoot;
+
+
 
     void Update()
     {
-
-        ActionStructure[] listeActionsPossibles = GetComponent<UnitManager>().GetComponent<ActionManager>()._actions;
-
-        foreach(Instruction instru in _instructions)
+        /*PerceptStructure[] listePercepts = GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts;
+        if (!listePercepts[0]._percept._value)
+            _actions[0].Do(); // Move*/
+        _actions[0].Do();
+        if (_debugShoot)
         {
-            if (instru.verify())
-            {
-                break;
-            }
+            _actions[1].Do();
+            _debugShoot = false;
         }
     }
 
