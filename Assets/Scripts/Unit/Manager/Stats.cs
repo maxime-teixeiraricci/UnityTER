@@ -10,10 +10,17 @@ public class Stats : MonoBehaviour
     public bool _isBlocked;
     public int _health;
     public int _maxHealth;
+    public float _reloadTime;
+    public ParticleSystem _deathAnimation;
     //public Dictionary<string, Object> stats;
 
+    void Start()
+    {
+        _heading = Random.Range(0, 360);
+    }
     void Update()
     {
+        _reloadTime -= Time.deltaTime;
         //_heading = -transform.eulerAngles.y + 90;
         _heading = (_heading + 360) % 360;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, 90 - _heading , transform.eulerAngles.z);
@@ -25,6 +32,9 @@ public class Stats : MonoBehaviour
 
         if (_health <= 0)
         {
+            _deathAnimation = Instantiate(_deathAnimation);
+            _deathAnimation.transform.position = transform.position;
+            _deathAnimation.Play();
             Destroy(gameObject);
         }
     }

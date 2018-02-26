@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114405823559727810}
   - component: {fileID: 114564575189777126}
   - component: {fileID: 114920256706157908}
+  - component: {fileID: 114446335438441876}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848496013514230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.83, y: 2.14, z: 4.31}
+  m_LocalPosition: {x: -15.5, y: 7, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4660671219514916}
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _percepts:
-  - {fileID: 114254722364205320}
+  - {fileID: 114446335438441876}
 --- !u!114 &114254722364205320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +255,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listeStringPerceptsVoulus: []
   _stringAction: ACTION_MOVE
+--- !u!114 &114446335438441876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d227af4d2aec5b64eb3fe0811aabaeee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _perceptName: PERCEPT_ENEMY
+  _value: 0
+  _gameObject: {fileID: 0}
 --- !u!114 &114564575189777126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,6 +300,9 @@ MonoBehaviour:
   _isBlocked: 0
   _health: 100
   _maxHealth: 100
+  _reloadTime: 0
+  _deathAnimation: {fileID: 198578334095544314, guid: 2d1cdd4b67cac7f46b805e9e3fcdc152,
+    type: 2}
 --- !u!114 &114812733687718738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 1684289829089816, guid: 61a38a367f6027d4d81932c899077cc5, type: 2}
+  _reloadTime: 1.5
 --- !u!114 &114839424898076026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listeStringPerceptsVoulus:
-  - PERCEPT_UNIT
+  - PERCEPT_ENEMY
   _stringAction: ACTION_FIRE
 --- !u!114 &114928481262886804
 MonoBehaviour:
@@ -342,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f6ae3ea3a79341a732119715f28e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 1, g: 0.16176468, b: 0.16176468, a: 1}
+  _color: {r: 0.16176468, g: 0.41034478, b: 1, a: 1}
   _meshRenderer:
   - {fileID: 23907492687566064}
 --- !u!114 &114945047088613984
