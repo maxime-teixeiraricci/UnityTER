@@ -4,7 +4,7 @@ using UnityEngine;
 
     public class PerceptManager : MonoBehaviour
     {
-    public PerceptStructure[] _percepts;
+    public Percept[] _percepts;
 
 
     void Update()

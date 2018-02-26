@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PerceptUnit : Percept {
 
-    PerceptUnit()
+    public PerceptUnit()
     {
         _perceptName = "PERCEPT_UNIT";
         _value = false;

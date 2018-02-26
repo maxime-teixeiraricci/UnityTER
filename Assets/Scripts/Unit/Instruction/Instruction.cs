@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Instruction : MonoBehaviour {
+public abstract class Instruction : MonoBehaviour {
 
     [SerializeField]
-    PerceptStructure[] _listePerceptsVoulus;
+    public string[] _listeStringPerceptsVoulus;
     [SerializeField]
-    Action _action;
+    public string _stringAction;
 
     public bool verify()
     {
-        PerceptStructure[] listePerceptsUtilisables = GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts;
+        Percept[] listePerceptsUtilisables = GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts;
         bool verifie = true;
-        foreach(PerceptStructure p in _listePerceptsVoulus)
+        foreach(string s in _listeStringPerceptsVoulus)
         {
-            foreach(PerceptStructure p2 in listePerceptsUtilisables)
+            foreach(Percept p2 in listePerceptsUtilisables)
             {
-                if(p._name.Equals(p2._name))
+                if(s.Equals(p2._perceptName))
                 {
-                    verifie = p2._percept._value;
+                    verifie = p2._value;
                 }
             }
 
@@ -30,7 +30,6 @@ public class Instruction : MonoBehaviour {
         }
         if (verifie)
         {
-            _action.Do();
             return true;
         }
 

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114259867728414132}
   - component: {fileID: 114839424898076026}
   - component: {fileID: 114244225012411868}
-  - component: {fileID: 114063663080662672}
+  - component: {fileID: 114126168816270912}
   - component: {fileID: 114945047088613984}
   - component: {fileID: 114812733687718738}
   m_Layer: 0
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848496013514230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.83, y: 2.14, z: 4.31}
+  m_LocalPosition: {x: -8.83, y: 2.14, z: -5.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4660671219514916}
@@ -181,7 +181,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &114063663080662672
+--- !u!114 &114126168816270912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -189,13 +189,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848496013514230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b668cacddc94d44da91e5c0b69c4344, type: 3}
+  m_Script: {fileID: 11500000, guid: 91977c1ea3c42b846a6a88d99a089797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
-  vectMov: {x: 0, y: 0, z: 0}
-  _isblocked: 0
-  _offset: 1
+  _perceptName: PERCEPT_UNIT
+  _value: 0
+  _gameObject: {fileID: 0}
 --- !u!114 &114214390983097066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,9 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _angle: 60
   _distance: 5
+  _listOfCollision: []
   _sphereCollider: {fileID: 135046580099900212}
   _brain: {fileID: 114839424898076026}
-  _listOfCollision: []
 --- !u!114 &114244225012411868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,7 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ebc2e3531bc1d44af600ac5a13a344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _percepts: []
+  _percepts:
+  - _name: PERCEPT_UNIT
+    _percept: {fileID: 114126168816270912}
 --- !u!114 &114259867728414132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,10 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heading: 0
-  _myTeam: {fileID: 0}
-  _isBlocked: 0
-  _health: 100
-  _maxHealth: 100
+  _myTeam: 0
 --- !u!114 &114812733687718738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,12 +274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa7b92dec9baf34782388a22c9f006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actions:
+  _instructions: []
+  _actionsPossibles:
   - _name: ACTION_MOVE
     _action: {fileID: 114945047088613984}
-  - _name: ACTION_SHOOT
+  - _name: ACTION_FIRE
     _action: {fileID: 114812733687718738}
-  _debugShoot: 1
 --- !u!114 &114945047088613984
 MonoBehaviour:
   m_ObjectHideFlags: 1
