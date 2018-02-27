@@ -37,6 +37,10 @@ public class Stats : MonoBehaviour
             _deathAnimation.Play();
             Destroy(gameObject);
         }
+        if (transform.position.y < -5)
+        {
+            Destroy(gameObject);
+        }
     }
 
     
