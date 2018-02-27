@@ -7,28 +7,55 @@ public class MovableCharacter : MonoBehaviour
     public float speed;
     public Vector3 vectMov;
     public bool _isblocked;
-    public float _offset;
+    public float _offsetGround;
+    public float _offsetObstacle;
+    public float _edgeDistance;
+    public bool _obstacleEncounter;
+
+    private Vector3 nextposition;
     	
-	// Update is called once per frame
-	void FixedUpdate () {
-
-       
-        
-
-    }
-    
 
     public void Move()
     {
-        float h = GetComponent<UnitManager>()._stats._heading * Mathf.Deg2Rad;
-        vectMov = new Vector3(Mathf.Cos(h), 0, Mathf.Sin(h));
-        Vector3 nextposition = transform.position + vectMov.normalized * speed * Time.deltaTime;
+        vectMov = Utility.vectorFromAngle(GetComponent<Stats>()._heading) ;
+        nextposition = transform.position + vectMov.normalized * speed * Time.deltaTime;
+
         
-        if (Physics.Raycast(nextposition + vectMov.normalized * _offset, Vector3.down, 2f))
+
+        if (!isBlocked())
         {
+            
             _isblocked = false;
             transform.position = nextposition;
         }
+        
         else { _isblocked = true; }
+        _obstacleEncounter = false;
     }
+
+
+    public bool isBlocked()
+    {
+        Ray rA = new Ray(nextposition + vectMov.normalized * _offsetGround, Vector3.down * _edgeDistance);
+
+
+        bool a = Physics.Raycast(rA.origin,rA.direction);
+        
+        if (!a) { Debug.DrawRay(rA.origin, rA.direction, Color.green); }
+        else { Debug.DrawRay(rA.origin, rA.direction, Color.red); }
+        
+        return !a ;
+
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag != "Ground")
+        {
+            print("Collide ! " + other.gameObject);
+            _isblocked = true;
+            transform.position += (transform.position - other.gameObject.transform.position).normalized * 0.01f;
+        }
+    }
+
 }

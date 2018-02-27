@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PerceptEnnemy : Percept
 {
+    [SerializeField()]
+    public int angleEnemy;
 
     public PerceptEnnemy()
     {
         _perceptName = "PERCEPT_ENEMY";
         _value = false;
         _gameObject = null;
+        
     }
 
     override public void update()
@@ -19,23 +22,28 @@ public class PerceptEnnemy : Percept
         List<GameObject> _listOfUnitColl = new List<GameObject>();
         _value = false;
         _gameObject = null;
-
+        
 
         foreach (GameObject gO in sight._listOfCollision)
         {
-            UnitManager gOmanager = gO.GetComponent<UnitManager>();
-            if (gO.GetComponent<UnitManager>() != null)
+            if (gO && !_gameObject)
             {
-                if (gOmanager.GetComponent<Stats>()._myTeam._color != GetComponent<Stats>()._myTeam._color)
+                
+                UnitManager gOmanager = gO.GetComponent<UnitManager>();
+                if (gO.GetComponent<UnitManager>() != null)
                 {
-                    _gameObject = gO;
-                    GetComponent<Stats>()._heading = getAngle();
-                    _value = true;
-                    break;
+                    
+                    if (gOmanager.GetComponent<Stats>()._myTeam._color != GetComponent<Stats>()._myTeam._color)
+                    {
+                        _gameObject = gO;
+                        angleEnemy = getAngle();
+                        GetComponent<Stats>()._heading = getAngle();
+                        _value = true;
+                        break;
+                    }
                 }
             }
         }
-        
     }
 
     public int getAngle()
@@ -43,7 +51,11 @@ public class PerceptEnnemy : Percept
         Vector3 vect = _gameObject.transform.position - transform.position;
         Vector3 projVect = Vector3.ProjectOnPlane(vect, Vector3.up);
 
-        return (int)(360 - Vector3.Angle(projVect, new Vector3(1, 0, 0)));
+        if (projVect.z > 0)
+        {
+            return (int)(360 - Vector3.Angle(projVect, new Vector3(1, 0, 0)));
+        }
+        return (int)(Vector3.Angle(projVect, new Vector3(1, 0, 0)));
 
     }
 }

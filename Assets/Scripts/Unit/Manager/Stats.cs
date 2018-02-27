@@ -23,7 +23,7 @@ public class Stats : MonoBehaviour
         _reloadTime -= Time.deltaTime;
         //_heading = -transform.eulerAngles.y + 90;
         _heading = (_heading + 360) % 360;
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, 90 - _heading , transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, _heading +90 , transform.eulerAngles.z);
         _isBlocked = GetComponent<MovableCharacter>()._isblocked;
         if (_isBlocked)
         {
