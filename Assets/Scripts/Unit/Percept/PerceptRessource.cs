@@ -19,7 +19,7 @@ public class PerceptRessource : Percept
         List<GameObject> _listOfRessourceColl = new List<GameObject>();
         foreach (GameObject gO in sight._listOfCollision)
         {
-            if (gO.GetComponent<ItemBehavior>() != null)
+            if (gO.GetComponent<ItemRessourceBehavior>() != null)
             {
                 _listOfRessourceColl.Add(gO);
             }
