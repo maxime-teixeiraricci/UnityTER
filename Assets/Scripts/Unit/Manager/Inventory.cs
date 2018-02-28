@@ -15,14 +15,14 @@ public class Inventory : MonoBehaviour{
     {
         if (_actualSize < _maxSize && obj._size <= (_maxSize - _actualSize))
         {
-            _objets.Add(obj);
+            _objets.Add(obj,1);
             _actualSize += obj._size;
             return true;
         }
         else return false;
     }
 
-    public Item pop(Objet obj)
+    public Objet pop(Objet obj)
     {
         if (_objets.ContainsKey(obj) && _objets[obj] > 0)
         {

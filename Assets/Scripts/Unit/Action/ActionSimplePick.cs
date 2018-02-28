@@ -8,10 +8,10 @@ public class ActionSimplePick : Action
 
     public override void Do()
     {
-        ItemBehavior item = _target.GetComponent<ItemBehavior>();
+        Objet obj = _target.GetComponent<Objet>();
         Inventory unitInventory = GetComponent<UnitManager>().GetComponent<Inventory>();
-        unitInventory.add(item);
-        item.getPicked();
+        unitInventory.add(obj);
+        obj.getPicked();
     }
 
 }
