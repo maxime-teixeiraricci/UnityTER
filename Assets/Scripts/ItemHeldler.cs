@@ -9,6 +9,6 @@ public class ItemHeldler : MonoBehaviour
 
     void Start()
     {
-        GameObject.Find("Inventory").GetComponent<TestInventory>().objets.Add(_heldObjet);
+        GameObject.Find("Inventory").GetComponent<TestInventory>().Add(_heldObjet);
     }
 }

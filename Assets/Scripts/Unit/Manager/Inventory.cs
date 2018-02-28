@@ -5,32 +5,33 @@ using UnityEngine;
 public class Inventory : MonoBehaviour{
 
     [SerializeField]
-    private Dictionary<Objet,int> _objets = new Dictionary<Objet, int>();
+    public Dictionary<Objet,int> _objets = new Dictionary<Objet, int>();
     [SerializeField]
-    private int _maxSize;
+    public int _maxSize;
     [SerializeField]
-    private int _actualSize;
+    public int _actualSize;
 
     public bool add(Objet obj)
     {
         if (_actualSize < _maxSize && obj._size <= (_maxSize - _actualSize))
         {
-            _objets.Add(obj,1);
+            if (_objets.ContainsKey(obj)) { _objets[obj]++; }
+            else { _objets[obj] = 1 ; }
             _actualSize += obj._size;
             return true;
         }
         else return false;
     }
 
-    public Objet pop(Objet obj)
+    public bool pop(Objet obj)
     {
         if (_objets.ContainsKey(obj) && _objets[obj] > 0)
         {
             _objets[obj] -= 1;
             _actualSize -= obj._size;
-            return obj;
+            return true;
         }
-        else return null;
+        else return false;
     }
 
     public bool isFull()

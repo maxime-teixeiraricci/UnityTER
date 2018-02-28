@@ -17,7 +17,7 @@ public class PerceptFoodInventory : Percept {
     {
         Inventory inventory = GetComponent<Brain>().GetComponent<Inventory>();
         
-        if (inventory._objets.ContainsKey(_objetFood) && _objets[_objetFood] > 0)
+        if (inventory._objets.ContainsKey(_objetFood) && inventory._objets[_objetFood] > 0)
         {
             _value = true;
             _objetPercu = _objetFood;

@@ -8,8 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc4fc5f23c8a4548bcdacffac16c386, type: 3}
-  m_Name: Pomme
+  m_Script: {fileID: 11500000, guid: bf1cd6a3f85052f42a042b9b3f7ea2b0, type: 3}
+  m_Name: Ressource
   m_EditorClassIdentifier: 
-  _name: 
-  _value: 0
+  _gameObject: {fileID: 1015467381009534, guid: a6b0b465978bdad4eb547ebf97a23780,
+    type: 2}
+  _name: Ressource
+  _value: 10
+  _size: 0
+  _cost: 0
