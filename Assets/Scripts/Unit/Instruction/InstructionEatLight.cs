@@ -10,7 +10,7 @@ public class InstructionEatLight : Instruction
         string[] listePercepts = new string[1];
         string action;
         action = "ACTION_EAT";
-        listePercepts[0] = "PERCEPT_RESSOURCE";
+        listePercepts[0] = "PERCEPT_FOOD_INVENTORY";
         _listeStringPerceptsVoulus = listePercepts;
         _stringAction = action;
 
