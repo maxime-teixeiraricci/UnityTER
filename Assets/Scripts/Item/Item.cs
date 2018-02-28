@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Item
 {
-
+    [SerializeField]
+    private int _cost;
     [SerializeField]
     private int _value;
     [SerializeField]
@@ -18,6 +19,7 @@ public class Item
         _value = i_behave.getValue();
         _name = i_behave.getName();
         _size = i_behave.getSize();
+        _cost = i_behave.getCost();
     }
 
     public Item(Item i)
@@ -25,13 +27,15 @@ public class Item
         _value = i.getValue();
         _name = i.getName();
         _size = i.getSize();
+        _cost = i.getCost();
     }
 
-    public Item(int val, int size, string name)
+    public Item(int val, int size, string name,int cost)
     {
         _value = val;
         _name = name;
         _size = size;
+        _cost = cost;
     }
 
     public int getValue()
@@ -49,11 +53,17 @@ public class Item
         return _size;
     }
 
+    public int getCost()
+    {
+        return _cost;
+    }
+
     public Item clone()
     {
         int value = _value;
         int size = _size;
         string name = _name;
+        int cost = _cost;
         Item I = new Item(this);
         return I;
     }

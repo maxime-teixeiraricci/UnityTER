@@ -28,6 +28,19 @@ public class Inventory : MonoBehaviour{
         if (_objets.Contains(i))
         {
             _objets.Remove(i);
+            _actualSize -= i.getSize();
+            return i;
+        }
+        else return null;
+    }
+
+    public Item popLast()
+    {
+        if (_actualSize > 0)
+        {
+            Item i = _objets[_actualSize - 1];
+            _objets.Remove(i);
+            _actualSize -= i.getSize();
             return i;
         }
         else return null;
