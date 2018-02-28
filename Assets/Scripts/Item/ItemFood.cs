@@ -12,7 +12,7 @@ public class ItemFood : Item
     {
     }
 
-    public ItemFood(int val, int size, string name) : base(val, size, name)
+    public ItemFood(int val, int size, string name, int cost) : base(val, size, name, cost)
     {
     }
 }

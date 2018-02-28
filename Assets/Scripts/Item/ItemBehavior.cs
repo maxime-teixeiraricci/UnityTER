@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class ItemBehavior : MonoBehaviour{
 
     [SerializeField]
+    private int _cost;
     private int _value;
     private Collider _collider;
     [SerializeField]
@@ -26,6 +27,11 @@ public abstract class ItemBehavior : MonoBehaviour{
     public int getSize()
     {
         return _size;
+    }
+
+    public int getCost()
+    {
+        return _cost;
     }
 
     public void getPicked()
