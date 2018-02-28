@@ -98,8 +98,8 @@ MonoBehaviour:
   _lifeTime: 1.5
   _owner: {fileID: 0}
   _vect: {x: 0, y: 0, z: 0}
-  _speed: 25
-  _damage: 15
+  _speed: 20
+  _damage: 20
 --- !u!135 &135835175235395026
 SphereCollider:
   m_ObjectHideFlags: 1

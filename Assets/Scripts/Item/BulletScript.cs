@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
     public float _speed;
     public int _damage;
 
-	void Update ()
+	void FixedUpdate ()
     {
         transform.position += _vect.normalized * Time.deltaTime * _speed;
         _lifeTime -= Time.deltaTime;
