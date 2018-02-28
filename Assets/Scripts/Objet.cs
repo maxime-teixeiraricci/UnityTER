@@ -13,6 +13,6 @@ public class Objet : ScriptableObject
 
     public void getPicked()
     {
-        Destroy(_gameObject);
+        
     }
 }

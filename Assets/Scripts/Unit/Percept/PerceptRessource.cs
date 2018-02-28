@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PerceptRessource : Percept
 {
-    public Brain brain;
-    public Sight sight;
+    private Brain brain;
+    private Sight sight;
 
     void Start()
     {
-        Brain brain = GetComponent<Brain>();
-        Sight sight = brain.GetComponent<Sight>();
+        brain = GetComponent<Brain>();
+        sight = brain.GetComponent<Sight>();
     }
 
     PerceptRessource()
@@ -22,18 +22,18 @@ public class PerceptRessource : Percept
 
     override public void update()
     {
-        List<GameObject> _listOfRessourceColl = new List<GameObject>();
-        foreach (GameObject gO in sight._listOfCollision)
+        bool res = false;
+        _gameObject = null;
+        foreach (GameObject gO in GetComponent<Sight>()._listOfCollision)
         {
-            if (gO.GetComponent<ItemHeldler>() != null)
+            if (gO && gO.GetComponent<ItemHeldler>())
             {
                 _gameObject = gO;
-                _value = true;
+                res = true;
                 break;
             }
         }
-            _value = false;
-            _gameObject = null;
+        _value = res;
     }
 
 }

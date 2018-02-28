@@ -14,6 +14,6 @@ MonoBehaviour:
   _gameObject: {fileID: 1015467381009534, guid: a6b0b465978bdad4eb547ebf97a23780,
     type: 2}
   _name: Ressource
-  _value: 10
+  _value: 15
   _size: 0
   _cost: 0

@@ -21,6 +21,20 @@ public class Sight : MonoBehaviour
 
     void Update()
     {
+        for(int i = 0; i < 360; i += 10)
+        {
+            float h = GetComponent<UnitManager>()._stats._heading;
+            float j = i * Mathf.Deg2Rad;
+            Vector3 A = Utility.vectorFromAngle(h).normalized * _distance;
+            Vector3 B = new Vector3(Mathf.Cos(j), 0, Mathf.Sin(j)).normalized * _distance;
+
+            float angle = Vector3.Angle(A, B);
+            if (angle <= _angle)
+            {
+                Debug.DrawLine(transform.position, transform.position + B.normalized * _distance, Color.blue);
+            }
+        }
+
        foreach (GameObject go in _listOfCollision)
         {
             if (go == null)
@@ -37,8 +51,8 @@ public class Sight : MonoBehaviour
         if (!other.isTrigger)
         {
 
-            float h = GetComponent<UnitManager>()._stats._heading * Mathf.Deg2Rad;
-            Vector3 A = new Vector3(Mathf.Cos(h), 0, Mathf.Sin(h)).normalized * _distance;
+            float h = GetComponent<UnitManager>()._stats._heading;
+            Vector3 A = Utility.vectorFromAngle(h).normalized * _distance;
             Vector3 B = (other.transform.position - transform.position).normalized * _distance;
 
             float angle = Vector3.Angle(A, B);

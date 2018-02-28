@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour{
         if (_actualSize < _maxSize && obj._size <= (_maxSize - _actualSize))
         {
             if (_objets.ContainsKey(obj)) { _objets[obj]++; }
-            else { _objets[obj] = 1 ; }
+            else { _objets.Add(obj, 1); }
             _actualSize += obj._size;
             return true;
         }

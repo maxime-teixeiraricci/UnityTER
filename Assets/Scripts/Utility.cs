@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Utility{
 
-	static public int getAngle(GameObject obj)
+    static public float getAngle(GameObject center, GameObject obj)
     {
-        return 0;
+        Vector3 A = new Vector3(1, 0, 0);
+        Vector3 b = (obj.transform.position - center.transform.position);
+        Vector3 B = (Vector3.ProjectOnPlane(b, new Vector3(0, 1, 0))).normalized;
+        float angle = Vector3.Angle(A, B);
+        if (center.transform.position.z > obj.transform.position.z)
+        {
+            return angle;
+        }
+        return 360 - angle;
     }
 
     static public Vector3 vectorFromAngle(float angle)
