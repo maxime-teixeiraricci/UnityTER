@@ -5,43 +5,30 @@ using UnityEngine;
 public class Inventory : MonoBehaviour{
 
     [SerializeField]
-    private List<Item> _objets = new List<Item>();
+    private Dictionary<Objet,int> _objets = new Dictionary<Objet, int>();
     [SerializeField]
     private int _maxSize;
     [SerializeField]
     private int _actualSize;
 
-    public bool add(ItemBehavior i)
+    public bool add(Objet obj)
     {
-        if (_actualSize < _maxSize && i.getSize() <= (_maxSize - _actualSize))
+        if (_actualSize < _maxSize && obj._size <= (_maxSize - _actualSize))
         {
-            Item itemTake = new Item(i);
-            _objets.Add(itemTake);
-            _actualSize += i.getSize();
+            _objets.Add(obj);
+            _actualSize += obj._size;
             return true;
         }
         else return false;
     }
 
-    public Item pop(Item i)
+    public Item pop(Objet obj)
     {
-        if (_objets.Contains(i))
+        if (_objets.ContainsKey(obj) && _objets[obj] > 0)
         {
-            _objets.Remove(i);
-            _actualSize -= i.getSize();
-            return i;
-        }
-        else return null;
-    }
-
-    public Item popLast()
-    {
-        if (_actualSize > 0)
-        {
-            Item i = _objets[_actualSize - 1];
-            _objets.Remove(i);
-            _actualSize -= i.getSize();
-            return i;
+            _objets[obj] -= 1;
+            _actualSize -= obj._size;
+            return obj;
         }
         else return null;
     }
