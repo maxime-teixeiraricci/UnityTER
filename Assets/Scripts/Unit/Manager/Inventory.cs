@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour{
 
     [SerializeField]
-    private List<Item> _objets = new List<Item>();
+    private List<ItemFood> _ressource = new List<ItemFood>();
     [SerializeField]
     private int _maxSize;
     [SerializeField]
@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour{
     {
         if (_actualSize < _maxSize && i.getSize() <= (_maxSize - _actualSize))
         {
-            Item itemTake = new Item(i);
+            ItemFood itemTake = new Item(i);
             _objets.Add(itemTake);
             _actualSize += i.getSize();
             return true;
@@ -23,11 +23,24 @@ public class Inventory : MonoBehaviour{
         else return false;
     }
 
-    public Item pop(Item i)
+    public Item pop(ItemFood i)
     {
         if (_objets.Contains(i))
         {
             _objets.Remove(i);
+            _actualSize -= i.getSize();
+            return i;
+        }
+        else return null;
+    }
+
+    public Item popLast()
+    {
+        if (_actualSize > 0)
+        {
+            ItemFood i = _objets[_actualSize - 1];
+            _objets.Remove(i);
+            _actualSize -= i.getSize();
             return i;
         }
         else return null;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ItemBehavior : MonoBehaviour{
+public abstract class ItemBehavior : MonoBehaviour{
 
     [SerializeField]
     private int _value;
