@@ -9,14 +9,10 @@ public class ActionSimpleHeal : Action
     {
         Inventory unitInventory = GetComponent<UnitManager>().GetComponent<Inventory>();
         Stats unitStat = GetComponent<UnitManager>().GetComponent<Stats>();
-        if (unitStat._health < unitStat._maxHealth)
+        if (unitInventory.pop(_healingObject))
         {
-
-            if (unitInventory.pop(_healingObject))
-            {
-                unitStat._health += _healingObject._value;
-                unitStat._health = Mathf.Min(unitStat._health, unitStat._maxHealth);
-            }
+            unitStat._health += _healingObject._value;
+            unitStat._health = Mathf.Min(unitStat._health, unitStat._maxHealth);
         }
     }
 }
