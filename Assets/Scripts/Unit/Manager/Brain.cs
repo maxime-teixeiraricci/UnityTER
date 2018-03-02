@@ -6,17 +6,17 @@ using UnityEngine;
 public class Brain : MonoBehaviour
 {
     public ActionStructure[] _actions;
-    public Instruction[] _instructions;
+    public InstructionScriptable[] _instructions;
     public bool _debugShoot;
 
 
 
     void Update()
     {
-        foreach(Instruction instr in _instructions)
+        foreach(InstructionScriptable instr in _instructions)
         {
             Action actionPossible = this.actionPossible(instr._stringAction);
-            if (actionPossible != null && instr.verify())
+            if (actionPossible != null && instr.verify(GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts))
             {
                 actionPossible.Do();
                 print("" + actionPossible.ToString());

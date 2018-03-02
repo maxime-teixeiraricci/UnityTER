@@ -449,10 +449,10 @@ MonoBehaviour:
   - _name: ACTION_PICK
     _action: {fileID: 114207513178386078}
   _instructions:
-  - {fileID: 114990759836431174}
-  - {fileID: 114920256706157908}
-  - {fileID: 114244754023496320}
-  - {fileID: 114405823559727810}
+  - {fileID: 11400000, guid: ee2bebd4eaeee8b43b191b0d6e48926e, type: 2}
+  - {fileID: 11400000, guid: 08fdd6a28a717e841af0c803feb22484, type: 2}
+  - {fileID: 11400000, guid: e249406491c78314ab4f578342b1aa98, type: 2}
+  - {fileID: 11400000, guid: adb83b78a27a2f64f967ea90f79980a8, type: 2}
   _debugShoot: 0
 --- !u!114 &114848912951732000
 MonoBehaviour:
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f6ae3ea3a79341a732119715f28e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0.12062065, g: 0.71323526, b: 0.36992744, a: 1}
+  _color: {r: 0.14705884, g: 0.22352962, b: 1, a: 1}
   _meshRenderer:
   - {fileID: 23907492687566064}
 --- !u!114 &114945047088613984
