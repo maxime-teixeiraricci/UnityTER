@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: InstructionPickLight
   m_EditorClassIdentifier: 
   _listeStringPerceptsVoulus:
-  - PERCEPT_RESSOURCE
+  - PERCEPT_RESSOURCE_NEAR
   _stringAction: ACTION_PICK
