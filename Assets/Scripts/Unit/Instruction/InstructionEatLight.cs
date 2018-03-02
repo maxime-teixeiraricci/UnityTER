@@ -15,4 +15,5 @@ public class InstructionEatLight : Instruction
         _stringAction = action;
 
     }
+
 }

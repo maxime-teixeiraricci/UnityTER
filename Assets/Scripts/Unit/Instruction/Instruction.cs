@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public abstract class Instruction : MonoBehaviour {
@@ -8,6 +9,29 @@ public abstract class Instruction : MonoBehaviour {
     public string[] _listeStringPerceptsVoulus;
     [SerializeField]
     public string _stringAction;
+
+    public XmlNode xmlStructure()
+    {
+        XmlDocument l_doc = new XmlDocument();
+        XmlNode l_whenNode = l_doc.CreateElement(this.name);
+
+        XmlNode paramNode = l_doc.CreateElement("parameters");
+        foreach (string c in _listeStringPerceptsVoulus)
+        {
+            XmlElement t = l_doc.CreateElement(c);
+            paramNode.AppendChild(t);
+        }
+       
+
+        l_whenNode.AppendChild(paramNode);
+
+        XmlNode actNode = l_doc.CreateElement("actions");
+
+        XmlElement a = l_doc.CreateElement(_stringAction);
+        l_whenNode.AppendChild(actNode);
+
+        return l_whenNode;
+    }
 
     public bool verify()
     {
