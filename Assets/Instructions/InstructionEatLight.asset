@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listeStringPerceptsVoulus:
   - PERCEPT_FOOD_INVENTORY
+  - PERCEPT_LIFE_NOT_MAX
   _stringAction: ACTION_EAT
