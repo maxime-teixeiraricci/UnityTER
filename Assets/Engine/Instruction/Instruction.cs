@@ -4,16 +4,19 @@ using System.Xml;
 using UnityEngine;
 
 public class Instruction : MonoBehaviour {
+<<<<<<< HEAD:Assets/Scripts/Unit/Instruction/Instruction.cs
 
     [SerializeField]
+=======
+>>>>>>> 990aa4b3681819ca1016e9a42a7128761188ab8e:Assets/Engine/Instruction/Instruction.cs
     public string[] _listeStringPerceptsVoulus;
-    [SerializeField]
     public string _stringAction;
 
     
    public Instruction(string[] ins, string act)
     {
         _stringAction = act;
+<<<<<<< HEAD:Assets/Scripts/Unit/Instruction/Instruction.cs
         for (int i = 0; i < ins.Length; i++)
         {
             _listeStringPerceptsVoulus[i] = ins[i];
@@ -21,6 +24,10 @@ public class Instruction : MonoBehaviour {
 
     }
    
+=======
+        _listeStringPerceptsVoulus = ins;
+    }
+>>>>>>> 990aa4b3681819ca1016e9a42a7128761188ab8e:Assets/Engine/Instruction/Instruction.cs
 
     public XmlNode xmlStructure()
     {
@@ -71,5 +78,25 @@ public class Instruction : MonoBehaviour {
 
 
         return false;
+    }
+
+    public string[] getListeStringPerceptsVoulus()
+    {
+        return this._listeStringPerceptsVoulus;
+    }
+
+    public void setListeStringPerceptsVoulus(string[] percepts)
+    {
+        this._listeStringPerceptsVoulus = percepts;
+    }
+
+    public string getStringAction()
+    {
+        return this._stringAction;
+    }
+
+    public void setStringAction(string action)
+    {
+        this._stringAction = action;
     }
 }

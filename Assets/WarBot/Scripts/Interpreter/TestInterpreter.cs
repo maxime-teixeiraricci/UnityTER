@@ -15,6 +15,7 @@ namespace UnityTER.Interpreter
            XMLWarbotInterpreter interpreter = new XMLWarbotInterpreter();
            List<Instruction> behavior = new List<Instruction>();
 
+<<<<<<< HEAD:Assets/Scripts/Interpreter/TestInterpreter.cs
             string[] conditions  = new string[3];
             conditions[0] = "NearEnnemy";
             conditions[1] = "NearBase";
@@ -24,6 +25,15 @@ namespace UnityTER.Interpreter
 
             Instruction i = new Instruction(conditions,action);
 
+=======
+
+            // INSTRUCTION DE EAT DES LIGHTS
+            string[] percepts = new string[] { "PERCEPT_FOOD_INVENTORY", "PERCEPT_LIFE_NOT_MAX" };
+            string action = "ACTION_EAT";
+
+
+            Instruction i = new Instruction(percepts, action);
+>>>>>>> 990aa4b3681819ca1016e9a42a7128761188ab8e:Assets/WarBot/Scripts/Interpreter/TestInterpreter.cs
             behavior.Add(i);
 
             interpreter.behaviorToXml(teamName, Constants.teamsDirectory, unitName, behavior);
