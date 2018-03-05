@@ -46,27 +46,18 @@ GameObject:
   - component: {fileID: 114599275282398372}
   - component: {fileID: 114259867728414132}
   - component: {fileID: 114839424898076026}
+  - component: {fileID: 114928481262886804}
   - component: {fileID: 114244225012411868}
-  - component: {fileID: 114058680661528918}
   - component: {fileID: 114945047088613984}
   - component: {fileID: 114812733687718738}
-  - component: {fileID: 114928481262886804}
-  - component: {fileID: 114870064804236824}
-  - component: {fileID: 114405823559727810}
-  - component: {fileID: 114564575189777126}
-  - component: {fileID: 114920256706157908}
-  - component: {fileID: 114446335438441876}
-  - component: {fileID: 114120251092008914}
-  - component: {fileID: 114244754023496320}
-  - component: {fileID: 114990759836431174}
   - component: {fileID: 114747396216174820}
   - component: {fileID: 114494805286506436}
+  - component: {fileID: 114564575189777126}
+  - component: {fileID: 114446335438441876}
+  - component: {fileID: 114120251092008914}
+  - component: {fileID: 114870064804236824}
+  - component: {fileID: 114058680661528918}
   - component: {fileID: 114904654134686936}
-  - component: {fileID: 114242349803240774}
-  - component: {fileID: 114428784878158140}
-  - component: {fileID: 114207513178386078}
-  - component: {fileID: 114970698869370958}
-  - component: {fileID: 114848912951732000}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -227,18 +218,6 @@ MonoBehaviour:
   _value: 0
   _gameObject: {fileID: 0}
   _objetFood: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
---- !u!114 &114207513178386078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f3e871cd95b3345b46378047e15fa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
 --- !u!114 &114214390983097066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,20 +234,6 @@ MonoBehaviour:
   _sphereCollider: {fileID: 135046580099900212}
   _brain: {fileID: 114839424898076026}
   _listOfCollision: []
---- !u!114 &114242349803240774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777d6e4c9e4162540af0fe3224081ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _perceptName: PERCEPT_LIFE_NOT_MAX
-  _value: 0
-  _gameObject: {fileID: 0}
 --- !u!114 &114244225012411868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,23 +249,8 @@ MonoBehaviour:
   - {fileID: 114446335438441876}
   - {fileID: 114120251092008914}
   - {fileID: 114058680661528918}
-  - {fileID: 114242349803240774}
+  - {fileID: 114904654134686936}
   - {fileID: 114870064804236824}
---- !u!114 &114244754023496320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e8a51b13537ea489896194dcca619a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus:
-  - PERCEPT_RESSOURCE
-  - PERCEPT_RESSOURCE_NEAR
-  _stringAction: ACTION_PICK
 --- !u!114 &114259867728414132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,31 +264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSize: 1000
   _actualSize: 0
---- !u!114 &114405823559727810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e42f82ea566e144af5f7e8b1305f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus: []
-  _stringAction: ACTION_MOVE
---- !u!114 &114428784878158140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373d49693f5d5774397670f22ee644df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healingObject: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
 --- !u!114 &114446335438441876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,29 +370,15 @@ MonoBehaviour:
   - _name: ACTION_FIRE
     _action: {fileID: 114812733687718738}
   - _name: ACTION_EAT
-    _action: {fileID: 114428784878158140}
+    _action: {fileID: 114494805286506436}
   - _name: ACTION_PICK
-    _action: {fileID: 114207513178386078}
+    _action: {fileID: 114747396216174820}
   _instructions:
-  - {fileID: 114990759836431174}
-  - {fileID: 114920256706157908}
-  - {fileID: 114244754023496320}
-  - {fileID: 114405823559727810}
+  - {fileID: 11400000, guid: ee2bebd4eaeee8b43b191b0d6e48926e, type: 2}
+  - {fileID: 11400000, guid: 08fdd6a28a717e841af0c803feb22484, type: 2}
+  - {fileID: 11400000, guid: e249406491c78314ab4f578342b1aa98, type: 2}
+  - {fileID: 11400000, guid: adb83b78a27a2f64f967ea90f79980a8, type: 2}
   _debugShoot: 0
---- !u!114 &114848912951732000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e8a51b13537ea489896194dcca619a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus:
-  - PERCEPT_RESSOURCE
-  _stringAction: ACTION_PICK
 --- !u!114 &114870064804236824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,20 +407,6 @@ MonoBehaviour:
   _perceptName: PERCEPT_LIFE_NOT_MAX
   _value: 0
   _gameObject: {fileID: 0}
---- !u!114 &114920256706157908
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e55a435b6d74141bc36fdd9282f9c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus:
-  - PERCEPT_ENEMY
-  _stringAction: ACTION_FIRE
 --- !u!114 &114928481262886804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -521,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f6ae3ea3a79341a732119715f28e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0.12062065, g: 0.71323526, b: 0.36992744, a: 1}
+  _color: {r: 0.14705884, g: 0.22352962, b: 1, a: 1}
   _meshRenderer:
   - {fileID: 23907492687566064}
 --- !u!114 &114945047088613984
@@ -551,36 +448,6 @@ MonoBehaviour:
   _sight: {fileID: 114214390983097066}
   _brain: {fileID: 114839424898076026}
   _percept: {fileID: 114244225012411868}
---- !u!114 &114970698869370958
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6594f88d55ad5b844b85f1a1644f0545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus:
-  - PERCEPT_FOOD_INVENTORY
-  - PERCEPT_LIFE_NOT_MAX
-  _stringAction: ACTION_EAT
---- !u!114 &114990759836431174
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848496013514230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6594f88d55ad5b844b85f1a1644f0545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus:
-  - PERCEPT_FOOD_INVENTORY
-  - PERCEPT_LIFE_NOT_MAX
-  _stringAction: ACTION_EAT
 --- !u!135 &135046580099900212
 SphereCollider:
   m_ObjectHideFlags: 1
