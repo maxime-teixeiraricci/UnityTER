@@ -10,6 +10,18 @@ public abstract class Instruction : MonoBehaviour {
     [SerializeField]
     public string _stringAction;
 
+    
+   /* public Instruction(List<string> ins, string act)
+    {
+        _stringAction = act;
+        for (int i = 0; i < ins.Count; i++)
+        {
+            _listeStringPerceptsVoulus[i] = ins[i];
+        }
+
+    }
+    
+*/
     public XmlNode xmlStructure()
     {
         XmlDocument l_doc = new XmlDocument();

@@ -42,14 +42,7 @@ namespace WarBotEngine.Editeur
                 List<string> l_conditions = new List<string>();
                 List<string> l_actions = new List<string>();
 
-                Instruction t = null;
-
-                Assembly monAssembly = Assembly.LoadFrom("warbot.exe");
-
-            foreach (System.Type type in monAssembly.GetTypes())
-            {
-                if (type.Name == ins.Name)
-                {
+                    Instruction t = null;
                     XmlNode l_cond = ins.FirstChild;
                     if (l_cond != null)
                     {
@@ -66,20 +59,9 @@ namespace WarBotEngine.Editeur
                         }
                     }
 
-                    t = (Instruction)System.Activator.CreateInstance(type);
-                    t._stringAction = l_actions[0];
+                 //   t = new Instruction(l_conditions,l_actions[0]);
 
-                    for (int i = 0; i < l_conditions.Count; i++)
-                    {
-                        t._listeStringPerceptsVoulus[i] = l_conditions[i];
-                    }
-
-                    break;
-                }
-            }
-
-                return t;
-            //}
+            return t;
 
         }
 
