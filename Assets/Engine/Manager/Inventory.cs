@@ -11,13 +11,27 @@ public class Inventory : MonoBehaviour{
     [SerializeField]
     public int _actualSize;
 
+    public bool _giveTen;
+    public Objet _ressource;
+
+    void Update()
+    {
+        if (_giveTen)
+        {
+            add(_ressource);
+            _giveTen = false;
+        }
+
+    }
+
     public bool add(Objet obj)
     {
         if (_actualSize < _maxSize && obj._size <= (_maxSize - _actualSize))
         {
-            if (_objets.ContainsKey(obj)) { _objets[obj] += 10; }
-            else { _objets.Add(obj, 10); }
+            if (_objets.ContainsKey(obj)) { _objets[obj] += 1; }
+            else { _objets.Add(obj, 1); }
             _actualSize += obj._size;
+            print(gameObject + " | Ressource : " + _objets[obj]);
             return true;
         }
         else return false;

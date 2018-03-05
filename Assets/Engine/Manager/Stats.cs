@@ -27,7 +27,10 @@ public class Stats : MonoBehaviour
         //_heading = -transform.eulerAngles.y + 90;
         _heading = (_heading + 360) % 360;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, _heading +90 , transform.eulerAngles.z);
-        _isBlocked = GetComponent<MovableCharacter>()._isblocked;
+        if (GetComponent<MovableCharacter>())
+        {
+            _isBlocked = GetComponent<MovableCharacter>()._isblocked;
+        }
         if (_isBlocked)
         {
             _heading = Random.Range(0, 360);

@@ -26,7 +26,7 @@ public class PerceptBaseNear : Percept {
         _gameObject = null;
         foreach (GameObject gO in GetComponent<Sight>()._listOfCollision)
         {
-            if (gO && gO.GetComponent<Stats>()._unitType == "base" && Vector3.Distance(transform.position, gO.transform.position) < 1.75f)
+            if (gO.GetComponent<Stats>() != null && gO.GetComponent<Stats>()._unitType == "base" && Vector3.Distance(transform.position, gO.transform.position) < 3.5f)
             {
                 _gameObject = gO;
                 res = true;
