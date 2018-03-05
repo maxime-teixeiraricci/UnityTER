@@ -4,11 +4,7 @@ using System.Xml;
 using UnityEngine;
 
 public class Instruction : MonoBehaviour {
-<<<<<<< HEAD:Assets/Scripts/Unit/Instruction/Instruction.cs
 
-    [SerializeField]
-=======
->>>>>>> 990aa4b3681819ca1016e9a42a7128761188ab8e:Assets/Engine/Instruction/Instruction.cs
     public string[] _listeStringPerceptsVoulus;
     public string _stringAction;
 
@@ -16,18 +12,8 @@ public class Instruction : MonoBehaviour {
    public Instruction(string[] ins, string act)
     {
         _stringAction = act;
-<<<<<<< HEAD:Assets/Scripts/Unit/Instruction/Instruction.cs
-        for (int i = 0; i < ins.Length; i++)
-        {
-            _listeStringPerceptsVoulus[i] = ins[i];
-        }
-
-    }
-   
-=======
         _listeStringPerceptsVoulus = ins;
     }
->>>>>>> 990aa4b3681819ca1016e9a42a7128761188ab8e:Assets/Engine/Instruction/Instruction.cs
 
     public XmlNode xmlStructure()
     {

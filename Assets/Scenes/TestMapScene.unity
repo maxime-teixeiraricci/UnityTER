@@ -10431,6 +10431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf17943336f7147ae42807821f1770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitType: 
   _heading: 0
   _myTeam: {fileID: 1087023149}
   _isBlocked: 0
@@ -10439,8 +10440,8 @@ MonoBehaviour:
   _reloadTime: 0
   _deathAnimation: {fileID: 198578334095544314, guid: 2d1cdd4b67cac7f46b805e9e3fcdc152,
     type: 2}
-  Ttarget: {x: 0, y: 0, z: 0}
-  objectif: {x: 0, y: 0, z: 0}
+  _target: {x: 0, y: 0, z: 0}
+  _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &1087023157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12305,7 +12306,7 @@ GameObject:
   - component: {fileID: 1257069716}
   - component: {fileID: 1257069724}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Base
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12345,7 +12346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actions: []
-  _instructions: []
+  _instructions:
+  - {fileID: 11400000, guid: 0ef2d19ec3e9b124ca95d7e3e96daad2, type: 2}
   _debugShoot: 0
 --- !u!114 &1257069718
 MonoBehaviour:
@@ -12399,6 +12401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf17943336f7147ae42807821f1770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitType: 
   _heading: 0
   _myTeam: {fileID: 0}
   _isBlocked: 0
@@ -12406,8 +12409,8 @@ MonoBehaviour:
   _maxHealth: 4500
   _reloadTime: 0
   _deathAnimation: {fileID: 0}
-  Ttarget: {x: 0, y: 0, z: 0}
-  objectif: {x: 0, y: 0, z: 0}
+  _target: {x: 0, y: 0, z: 0}
+  _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &1257069722
 MonoBehaviour:
   m_ObjectHideFlags: 0

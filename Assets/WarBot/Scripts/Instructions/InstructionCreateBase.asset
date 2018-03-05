@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa2e33b827765c499e06640d96b23a8, type: 3}
   m_Name: InstructionCreateBase
   m_EditorClassIdentifier: 
-  _listeStringPerceptsVoulus: []
-  _stringAction: 
+  _listeStringPerceptsVoulus:
+  - PERCEPT_10RESSOURCES
+  _stringAction: ACTION_LIGHT_CREATE
