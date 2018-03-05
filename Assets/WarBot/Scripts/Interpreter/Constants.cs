@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace WarBotEngine.Editeur
+namespace UnityTER.Interpreter
 {
     public class Constants
     {

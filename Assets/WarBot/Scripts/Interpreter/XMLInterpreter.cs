@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Xml;
 using System.IO;
 
-namespace WarBotEngine.Editeur
+namespace UnityTER.Interpreter
 {
     public abstract class XMLInterpreter : XmlDocument
     {
