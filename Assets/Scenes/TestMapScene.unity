@@ -14981,8 +14981,12 @@ GameObject:
   - component: {fileID: 1257069718}
   - component: {fileID: 1257069717}
   - component: {fileID: 1257069716}
+  - component: {fileID: 1257069727}
+  - component: {fileID: 1257069726}
   - component: {fileID: 1257069724}
   - component: {fileID: 1257069725}
+  - component: {fileID: 1257069729}
+  - component: {fileID: 1257069728}
   m_Layer: 0
   m_Name: Base
   m_TagString: Unit
@@ -15023,9 +15027,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa7b92dec9baf34782388a22c9f006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actions: []
+  _actions:
+  - _name: ACTION_EAT
+    _action: {fileID: 1257069729}
+  - _name: ACTION_LIGHT_CREATE
+    _action: {fileID: 1257069728}
   _instructions:
   - {fileID: 11400000, guid: 0ef2d19ec3e9b124ca95d7e3e96daad2, type: 2}
+  - {fileID: 11400000, guid: ee2bebd4eaeee8b43b191b0d6e48926e, type: 2}
   _debugShoot: 0
 --- !u!114 &1257069718
 MonoBehaviour:
@@ -15053,7 +15062,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ebc2e3531bc1d44af600ac5a13a344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _percepts: []
+  _percepts:
+  - {fileID: 1257069727}
+  - {fileID: 1257069726}
 --- !u!114 &1257069720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15085,7 +15096,7 @@ MonoBehaviour:
   _heading: 0
   _myTeam: {fileID: 1257069716}
   _isBlocked: 0
-  _health: 4500
+  _health: 2000
   _maxHealth: 4500
   _reloadTime: 0
   _deathAnimation: {fileID: 0}
@@ -15153,6 +15164,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1257069726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257069715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41c1e977f7281b46b43c692268d3770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _perceptName: PERCEPT_FOOD_INVENTORY
+  _value: 0
+  _gameObject: {fileID: 0}
+  _objetFood: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
+--- !u!114 &1257069727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257069715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777d6e4c9e4162540af0fe3224081ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _perceptName: 
+  _value: 0
+  _gameObject: {fileID: 0}
+--- !u!114 &1257069728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257069715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6977787fe94302d4293e49bc646dcd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressource: {fileID: 0}
+  _unitToCreate: {fileID: 0}
+--- !u!114 &1257069729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257069715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373d49693f5d5774397670f22ee644df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healingObject: {fileID: 0}
 --- !u!1001 &1257140046
 Prefab:
   m_ObjectHideFlags: 0

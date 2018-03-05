@@ -10,7 +10,7 @@ public class ActionLightCreate : Action
     public override void Do()
     {
         
-        if (GetComponent<Inventory>()._objets[ressource] > 10)
+        if (GetComponent<Inventory>()._objets[ressource] >= 10)
         {
             Ray ray;
             float dx, dz;
@@ -24,8 +24,10 @@ public class ActionLightCreate : Action
 
             } while (!Physics.Raycast(ray.origin, ray.direction));
             Instantiate(_unitToCreate, pos, Quaternion.identity);
+            GetComponent<Inventory>()._objets[ressource] -= 10;
 
-            
+
+
         }
     }
 

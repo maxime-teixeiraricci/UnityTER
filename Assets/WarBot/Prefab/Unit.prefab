@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 114945047088613984}
   - component: {fileID: 114812733687718738}
   - component: {fileID: 114928481262886804}
+  - component: {fileID: 114394974320967392}
   - component: {fileID: 114870064804236824}
   - component: {fileID: 114564575189777126}
   - component: {fileID: 114772576512771664}
@@ -61,6 +62,7 @@ GameObject:
   - component: {fileID: 114904654134686936}
   - component: {fileID: 114826921860234794}
   - component: {fileID: 114841380105666450}
+  - component: {fileID: 114043215727316596}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -75,7 +77,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848496013514230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.76, y: 7, z: 2.56}
+  m_LocalPosition: {x: -6.76, y: 7, z: 8.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4660671219514916}
@@ -192,6 +194,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &114043215727316596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87687df9081f6b0479ca9189d8e3b4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _item: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
+  _target: {fileID: 0}
 --- !u!114 &114058680661528918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +269,7 @@ MonoBehaviour:
   - {fileID: 114058680661528918}
   - {fileID: 114904654134686936}
   - {fileID: 114870064804236824}
+  - {fileID: 114394974320967392}
 --- !u!114 &114259867728414132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,6 +283,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSize: 1000
   _actualSize: 0
+  _giveTen: 0
+  _ressource: {fileID: 0}
+--- !u!114 &114394974320967392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67dafb4b1eaf95d4188857177a8476b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _perceptName: PERCEPT_BASE_NEAR
+  _value: 0
+  _gameObject: {fileID: 0}
 --- !u!114 &114446335438441876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,10 +434,13 @@ MonoBehaviour:
     _action: {fileID: 114826921860234794}
   - _name: ACTION_PICK
     _action: {fileID: 114841380105666450}
+  - _name: ACTION_GIVE
+    _action: {fileID: 114043215727316596}
   _instructions:
   - {fileID: 11400000, guid: ee2bebd4eaeee8b43b191b0d6e48926e, type: 2}
   - {fileID: 11400000, guid: 08fdd6a28a717e841af0c803feb22484, type: 2}
   - {fileID: 11400000, guid: e249406491c78314ab4f578342b1aa98, type: 2}
+  - {fileID: 11400000, guid: 9d8f322acc902bf4aa3e607c4744e880, type: 2}
   - {fileID: 11400000, guid: adb83b78a27a2f64f967ea90f79980a8, type: 2}
   _debugShoot: 0
 --- !u!114 &114841380105666450

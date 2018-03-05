@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: InstructionCreateBase
   m_EditorClassIdentifier: 
   _listeStringPerceptsVoulus:
-  - PERCEPT_10RESSOURCES
+  - PERCEPT_FOOD_INVENTORY
   _stringAction: ACTION_LIGHT_CREATE
