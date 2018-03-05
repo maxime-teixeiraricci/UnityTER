@@ -23,7 +23,8 @@ public class ActionLightCreate : Action
                 ray = new Ray(pos, Vector3.down * 2);
 
             } while (!Physics.Raycast(ray.origin, ray.direction));
-            Instantiate(_unitToCreate, pos, Quaternion.identity);
+            GameObject unit = Instantiate(_unitToCreate, pos, Quaternion.identity);
+            unit.GetComponent<Team>()._color = GetComponent<Team>()._color;
             GetComponent<Inventory>()._objets[ressource] -= 10;
 
 

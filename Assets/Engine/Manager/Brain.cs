@@ -9,7 +9,10 @@ public class Brain : MonoBehaviour
     public InstructionScriptable[] _instructions;
     public bool _debugShoot;
 
-
+    void Start()
+    {
+        GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
+    }
 
     void Update()
     {

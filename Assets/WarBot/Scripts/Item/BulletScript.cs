@@ -21,10 +21,12 @@ public class BulletScript : MonoBehaviour
 
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        print(other + " Touched");
         if (!other.isTrigger && other.GetComponent<Stats>() && other.gameObject != _owner.gameObject)
         {
+            print(other + " Touched");
             other.GetComponent<Stats>()._health -= _damage;
             _damage = 0;
             Destroy(gameObject);
