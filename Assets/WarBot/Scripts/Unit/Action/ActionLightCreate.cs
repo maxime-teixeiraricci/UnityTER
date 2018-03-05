@@ -19,7 +19,7 @@ public class ActionLightCreate : Action
             {
                 dx = Mathf.Cos(Random.Range(0, 2 * Mathf.PI));
                 dz = Mathf.Sin(Random.Range(0, 2 * Mathf.PI));
-                pos = new Vector3(4 * dx + transform.position.x, transform.position.y + 0.5f, 4 * dz + transform.position.z);
+                pos = new Vector3(4 * dx + transform.position.x, transform.position.y + 0.5f, 5 * dz + transform.position.z);
                 ray = new Ray(pos, Vector3.down * 2);
 
             } while (!Physics.Raycast(ray.origin, ray.direction));

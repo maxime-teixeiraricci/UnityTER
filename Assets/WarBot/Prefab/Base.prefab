@@ -883,7 +883,8 @@ MonoBehaviour:
   _health: 2000
   _maxHealth: 4500
   _reloadTime: 0
-  _deathAnimation: {fileID: 0}
+  _deathAnimation: {fileID: 198578334095544314, guid: 2d1cdd4b67cac7f46b805e9e3fcdc152,
+    type: 2}
   _target: {x: 0, y: 0, z: 0}
   _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &114989040910869904

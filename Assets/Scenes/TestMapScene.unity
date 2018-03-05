@@ -863,31 +863,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114615705347016096, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: _color.r
-      value: 0.07352942
-      objectReference: {fileID: 0}
-    - target: {fileID: 114615705347016096, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: _color.g
-      value: 0.42494932
-      objectReference: {fileID: 0}
-    - target: {fileID: 114615705347016096, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: _color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114727830971584248, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: _health
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 114727830971584248, guid: c7b9b5f30b9835b428d78526b72852bc,
-        type: 2}
-      propertyPath: _maxHealth
-      value: 125
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b9b5f30b9835b428d78526b72852bc, type: 2}
   m_IsPrefabParent: 0
@@ -2483,7 +2458,7 @@ GameObject:
   - component: {fileID: 186694167}
   m_Layer: 0
   m_Name: Barrel (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4193,7 +4168,7 @@ GameObject:
   - component: {fileID: 359707468}
   m_Layer: 0
   m_Name: Barrel (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4205,7 +4180,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 359707466}
   m_LocalRotation: {x: 0.72633106, y: 0.6172847, z: 0.24696596, w: 0.17438659}
-  m_LocalPosition: {x: 0.030522153, y: -0.0021793924, z: -0.19025832}
+  m_LocalPosition: {x: 0.0308, y: -0.0021793924, z: -0.2009}
   m_LocalScale: {x: 0.06000005, y: 0.033333354, z: 0.060000047}
   m_Children:
   - {fileID: 1283815069}
@@ -5821,7 +5796,7 @@ GameObject:
   - component: {fileID: 517281203}
   m_Layer: 0
   m_Name: Barrel (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7546,7 +7521,7 @@ GameObject:
   - component: {fileID: 655798892}
   m_Layer: 0
   m_Name: Barrel (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8322,7 +8297,7 @@ GameObject:
   - component: {fileID: 710368912}
   m_Layer: 0
   m_Name: Barrel (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8334,7 +8309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 710368910}
   m_LocalRotation: {x: 0.28350678, y: 0.26417962, z: 0.6043366, w: 0.69613963}
-  m_LocalPosition: {x: -0.07962995, y: -0.0022073747, z: -0.21117342}
+  m_LocalPosition: {x: -0.0792, y: -0.0019, z: -0.1963}
   m_LocalScale: {x: 0.060000032, y: 0.03333335, z: 0.060000032}
   m_Children:
   - {fileID: 307233748}
@@ -11097,7 +11072,7 @@ GameObject:
   - component: {fileID: 931271751}
   m_Layer: 0
   m_Name: Barrel (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11809,7 +11784,7 @@ GameObject:
   - component: {fileID: 966728286}
   m_Layer: 0
   m_Name: Barrel (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12347,7 +12322,7 @@ GameObject:
   - component: {fileID: 989622570}
   m_Layer: 0
   m_Name: Barrel (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12359,7 +12334,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 989622568}
   m_LocalRotation: {x: 0.79212546, y: -0.0070583387, z: 0.2495792, w: 0.5569539}
-  m_LocalPosition: {x: -0.07966944, y: -0.0021592618, z: -0.2777894}
+  m_LocalPosition: {x: -0.0814, y: -0.0021592618, z: -0.2633}
   m_LocalScale: {x: 0.060000032, y: 0.033333354, z: 0.060000002}
   m_Children:
   - {fileID: 1641575831}
@@ -20452,7 +20427,7 @@ GameObject:
   - component: {fileID: 1579828766}
   m_Layer: 0
   m_Name: Barrel (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20599,7 +20574,7 @@ GameObject:
   - component: {fileID: 1584221034}
   m_Layer: 0
   m_Name: Barrel (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22815,7 +22790,7 @@ GameObject:
   - component: {fileID: 1781836660}
   m_Layer: 0
   m_Name: Barrel (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22827,7 +22802,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1781836658}
   m_LocalRotation: {x: 0.48617786, y: 0.47126558, z: 0.5283961, w: 0.5121889}
-  m_LocalPosition: {x: -0.0222, y: -0.0021937212, z: -0.31}
+  m_LocalPosition: {x: -0.025, y: -0.0021937212, z: -0.2699}
   m_LocalScale: {x: 0.06, y: 0.033333343, z: 0.06}
   m_Children:
   - {fileID: 1369926724}
@@ -26454,7 +26429,7 @@ GameObject:
   - component: {fileID: 2040152467}
   m_Layer: 0
   m_Name: Barrel (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26466,7 +26441,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2040152465}
   m_LocalRotation: {x: 0.3844136, y: 0.37262264, z: 0.60646313, w: 0.5878614}
-  m_LocalPosition: {x: -0.021555688, y: -0.0021937212, z: -0.2214}
+  m_LocalPosition: {x: -0.0263, y: -0.0021937212, z: -0.1943}
   m_LocalScale: {x: 0.06000003, y: 0.03333335, z: 0.060000032}
   m_Children:
   - {fileID: 1799784882}
