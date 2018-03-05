@@ -12,6 +12,8 @@ public class Stats : MonoBehaviour
     public int _maxHealth;
     public float _reloadTime;
     public ParticleSystem _deathAnimation;
+    public Vector3 Ttarget;
+    public Vector3 objectif;
     //public Dictionary<string, Object> stats;
 
     void Start()
