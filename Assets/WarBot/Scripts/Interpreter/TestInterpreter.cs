@@ -14,7 +14,13 @@ namespace Assets.Scripts.Editeur.Interpreter
            XMLWarbotInterpreter interpreter = new XMLWarbotInterpreter();
            List<Instruction> behavior = new List<Instruction>();
 
-            Instruction i = new InstructionEatLight();
+
+            // INSTRUCTION DE EAT DES LIGHTS
+            string[] percepts = new string[] { "PERCEPT_FOOD_INVENTORY", "PERCEPT_LIFE_NOT_MAX" };
+            string action = "ACTION_EAT";
+
+
+            Instruction i = new Instruction(percepts, action);
             behavior.Add(i);
 
             interpreter.behaviorToXml(teamName, Constants.teamsDirectory, unitName, behavior);

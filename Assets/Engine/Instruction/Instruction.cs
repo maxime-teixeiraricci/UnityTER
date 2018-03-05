@@ -3,25 +3,17 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
-public abstract class Instruction : MonoBehaviour {
-
-    [SerializeField]
+public class Instruction : MonoBehaviour {
     public string[] _listeStringPerceptsVoulus;
-    [SerializeField]
     public string _stringAction;
 
     
-   /* public Instruction(List<string> ins, string act)
+   public Instruction(string[] ins, string act)
     {
         _stringAction = act;
-        for (int i = 0; i < ins.Count; i++)
-        {
-            _listeStringPerceptsVoulus[i] = ins[i];
-        }
-
+        _listeStringPerceptsVoulus = ins;
     }
-    
-*/
+
     public XmlNode xmlStructure()
     {
         XmlDocument l_doc = new XmlDocument();
@@ -71,5 +63,25 @@ public abstract class Instruction : MonoBehaviour {
 
 
         return false;
+    }
+
+    public string[] getListeStringPerceptsVoulus()
+    {
+        return this._listeStringPerceptsVoulus;
+    }
+
+    public void setListeStringPerceptsVoulus(string[] percepts)
+    {
+        this._listeStringPerceptsVoulus = percepts;
+    }
+
+    public string getStringAction()
+    {
+        return this._stringAction;
+    }
+
+    public void setStringAction(string action)
+    {
+        this._stringAction = action;
     }
 }
