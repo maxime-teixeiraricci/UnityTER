@@ -8,12 +8,6 @@ public class SpeedGamebar : MonoBehaviour
     public Slider _slider;
     public Text _textvalue;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update ()
     {
         Time.timeScale = _slider.value;

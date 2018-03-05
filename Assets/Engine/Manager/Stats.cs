@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Stats : MonoBehaviour
 {
+    public string _unitType;
     public float _heading;
     public Team _myTeam;
     public bool _isBlocked;
