@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
-public abstract class Instruction : MonoBehaviour {
+public class Instruction : MonoBehaviour {
 
     [SerializeField]
     public string[] _listeStringPerceptsVoulus;
@@ -11,17 +11,17 @@ public abstract class Instruction : MonoBehaviour {
     public string _stringAction;
 
     
-   /* public Instruction(List<string> ins, string act)
+   public Instruction(string[] ins, string act)
     {
         _stringAction = act;
-        for (int i = 0; i < ins.Count; i++)
+        for (int i = 0; i < ins.Length; i++)
         {
             _listeStringPerceptsVoulus[i] = ins[i];
         }
 
     }
-    
-*/
+   
+
     public XmlNode xmlStructure()
     {
         XmlDocument l_doc = new XmlDocument();

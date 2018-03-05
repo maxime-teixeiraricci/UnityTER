@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstructionShootLight : Instruction {
+public class InstructionShootLight //: Instruction
+{
 
     public InstructionShootLight()
     {
@@ -15,3 +16,4 @@ public class InstructionShootLight : Instruction {
 
     }
 }
+*/

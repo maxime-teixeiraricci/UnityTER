@@ -4,7 +4,8 @@ using UnityEngine;
 using System.Xml;
 using System.IO;
 
-namespace WarBotEngine.Editeur
+
+namespace UnityTER.Interpreter
 {
     public class XMLWarbotInterpreter : XMLInterpreter
     {
@@ -58,8 +59,6 @@ namespace WarBotEngine.Editeur
                             l_actions.Add(a.Name);
                         }
                     }
-
-                 //   t = new Instruction(l_conditions,l_actions[0]);
 
             return t;
 
