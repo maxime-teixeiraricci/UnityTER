@@ -46,18 +46,21 @@ GameObject:
   - component: {fileID: 114599275282398372}
   - component: {fileID: 114259867728414132}
   - component: {fileID: 114839424898076026}
-  - component: {fileID: 114928481262886804}
   - component: {fileID: 114244225012411868}
+  - component: {fileID: 114058680661528918}
   - component: {fileID: 114945047088613984}
   - component: {fileID: 114812733687718738}
-  - component: {fileID: 114747396216174820}
-  - component: {fileID: 114494805286506436}
+  - component: {fileID: 114928481262886804}
+  - component: {fileID: 114870064804236824}
   - component: {fileID: 114564575189777126}
+  - component: {fileID: 114772576512771664}
   - component: {fileID: 114446335438441876}
   - component: {fileID: 114120251092008914}
-  - component: {fileID: 114870064804236824}
-  - component: {fileID: 114058680661528918}
+  - component: {fileID: 114747396216174820}
+  - component: {fileID: 114494805286506436}
   - component: {fileID: 114904654134686936}
+  - component: {fileID: 114826921860234794}
+  - component: {fileID: 114841380105666450}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -72,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848496013514230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.5, y: 7, z: -8.5}
+  m_LocalPosition: {x: -6.76, y: 7, z: 2.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4660671219514916}
@@ -320,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf17943336f7147ae42807821f1770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitType: Unit
   _heading: 0
   _myTeam: {fileID: 114928481262886804}
   _isBlocked: 0
@@ -328,6 +332,8 @@ MonoBehaviour:
   _reloadTime: 0
   _deathAnimation: {fileID: 198578334095544314, guid: 2d1cdd4b67cac7f46b805e9e3fcdc152,
     type: 2}
+  _target: {x: 0, y: 0, z: 0}
+  _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &114747396216174820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +346,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
+--- !u!114 &114772576512771664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e55a435b6d74141bc36fdd9282f9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114812733687718738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,6 +370,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 1684289829089816, guid: 61a38a367f6027d4d81932c899077cc5, type: 2}
   _reloadTime: 1.5
+--- !u!114 &114826921860234794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373d49693f5d5774397670f22ee644df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healingObject: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
 --- !u!114 &114839424898076026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,15 +399,27 @@ MonoBehaviour:
   - _name: ACTION_FIRE
     _action: {fileID: 114812733687718738}
   - _name: ACTION_EAT
-    _action: {fileID: 114494805286506436}
+    _action: {fileID: 114826921860234794}
   - _name: ACTION_PICK
-    _action: {fileID: 114747396216174820}
+    _action: {fileID: 114841380105666450}
   _instructions:
   - {fileID: 11400000, guid: ee2bebd4eaeee8b43b191b0d6e48926e, type: 2}
   - {fileID: 11400000, guid: 08fdd6a28a717e841af0c803feb22484, type: 2}
   - {fileID: 11400000, guid: e249406491c78314ab4f578342b1aa98, type: 2}
   - {fileID: 11400000, guid: adb83b78a27a2f64f967ea90f79980a8, type: 2}
   _debugShoot: 0
+--- !u!114 &114841380105666450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848496013514230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3e871cd95b3345b46378047e15fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
 --- !u!114 &114870064804236824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f6ae3ea3a79341a732119715f28e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0.14705884, g: 0.22352962, b: 1, a: 1}
+  _color: {r: 0, g: 0.503448, b: 1, a: 1}
   _meshRenderer:
   - {fileID: 23907492687566064}
 --- !u!114 &114945047088613984
