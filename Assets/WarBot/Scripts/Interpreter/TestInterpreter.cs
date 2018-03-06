@@ -5,7 +5,7 @@ using UnityEngine;
 [assembly: AssemblyVersionAttribute("1.0")]
 namespace UnityTER.Interpreter
 { 
-    class TestInterpreter : MonoBehaviour
+    class TestInterpreter 
     {
         static void Main(string[] args) {
            string teamName = "TestInterpret";
@@ -31,9 +31,10 @@ namespace UnityTER.Interpreter
 
             List<Instruction> behavior2 = new List<Instruction>();
             behavior2 = interpreter.xmlToUnitBehavior(teamName, Constants.teamsDirectory,unitName);
+            System.Console.WriteLine("count : " + behavior2.Count);
             for (int cpt = 0; cpt < behavior2.Count; cpt++)
             {
-                System.Console.WriteLine(behavior2[cpt]._stringAction);
+                System.Console.WriteLine(behavior2[cpt].getStringAction());
                 foreach (string s in behavior2[cpt]._listeStringPerceptsVoulus)
                     System.Console.WriteLine(s);
             }
@@ -46,10 +47,6 @@ namespace UnityTER.Interpreter
 
         }
 
-        void Update()
-        {
-
-        }
 
     }
 

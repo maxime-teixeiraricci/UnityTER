@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
-public class Instruction : MonoBehaviour {
+public class Instruction {
 
     public string[] _listeStringPerceptsVoulus;
     public string _stringAction;
@@ -18,7 +18,7 @@ public class Instruction : MonoBehaviour {
     public XmlNode xmlStructure()
     {
         XmlDocument l_doc = new XmlDocument();
-        XmlNode l_whenNode = l_doc.CreateElement(this.name);
+        XmlNode l_whenNode = l_doc.CreateElement("instruction");
 
         XmlNode paramNode = l_doc.CreateElement("parameters");
         foreach (string c in _listeStringPerceptsVoulus)
@@ -31,13 +31,15 @@ public class Instruction : MonoBehaviour {
         l_whenNode.AppendChild(paramNode);
 
         XmlNode actNode = l_doc.CreateElement("actions");
-
         XmlElement a = l_doc.CreateElement(_stringAction);
+
+        actNode.AppendChild(a);
+
         l_whenNode.AppendChild(actNode);
 
         return l_whenNode;
     }
-
+    /*
     public bool verify()
     {
         Percept[] listePerceptsUtilisables = GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts;
@@ -65,6 +67,7 @@ public class Instruction : MonoBehaviour {
 
         return false;
     }
+    */
 
     public string[] getListeStringPerceptsVoulus()
     {
