@@ -30,7 +30,7 @@ namespace UnityTER.Interpreter
             /* */
 
             List<Instruction> behavior2 = new List<Instruction>();
-            behavior2 = interpreter.xmlToUnitBehavior(teamName, Constants.teamsDirectory,unitName);
+            behavior2 = interpreter.xmlToUnitBehavior(teamName, Interpreter.Constants.teamsDirectory,unitName);
             System.Console.WriteLine("count : " + behavior2.Count);
             for (int cpt = 0; cpt < behavior2.Count; cpt++)
             {
