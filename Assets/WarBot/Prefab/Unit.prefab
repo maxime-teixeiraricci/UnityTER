@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 114869078804266664}
   - component: {fileID: 114451088359043618}
   - component: {fileID: 114552764113531740}
-  - component: {fileID: 114758775879360448}
   - component: {fileID: 114928887971337096}
   - component: {fileID: 114766218874841476}
   - component: {fileID: 114723995929573438}
@@ -429,17 +428,6 @@ MonoBehaviour:
   _perceptName: PERCEPT_LIFE_NOT_MAX
   _value: 0
   _gameObject: {fileID: 0}
---- !u!114 &114758775879360448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1733731989166404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e55a435b6d74141bc36fdd9282f9c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114766218874841476
 MonoBehaviour:
   m_ObjectHideFlags: 1
