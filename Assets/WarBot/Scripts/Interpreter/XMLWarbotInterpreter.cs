@@ -43,7 +43,6 @@ namespace UnityTER.Interpreter
                 List<string> l_conditions = new List<string>();
                 List<string> l_actions = new List<string>();
 
-                    Instruction t = null;
                     XmlNode l_cond = ins.FirstChild;
                     if (l_cond != null)
                     {
@@ -59,6 +58,12 @@ namespace UnityTER.Interpreter
                             l_actions.Add(a.Name);
                         }
                     }
+                    string[] cond = new string[l_conditions.Count];
+                    for (int i = 0; i < l_conditions.Count; i++)
+                    {
+                        cond[i] = l_conditions[i];
+                    }
+                    Instruction t = new Instruction(cond,l_actions[0]);
 
             return t;
 
@@ -149,7 +154,12 @@ namespace UnityTER.Interpreter
                 if (l_unitBehavior != null && l_unitBehavior.HasChildNodes)
                 {
                     foreach (XmlNode ins in l_unitBehavior.ChildNodes)
+                    {
+                        System.Console.WriteLine(ins.Name);
                         l_behavior.Add(whichInstruction(unitName, ins));
+                        //System.Console.WriteLine(l_behavior[l_behavior.Count - 1].ToString());
+                    }
+                        
                 }
 
                 stream.Close();
