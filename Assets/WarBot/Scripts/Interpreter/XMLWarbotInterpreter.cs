@@ -173,15 +173,16 @@ namespace UnityTER.Interpreter
         public override void behaviorToXml(string teamName, string path, string unitName, List<Instruction> behavior)
         {
             // Try to find an already existing file with this team name
+            System.Console.WriteLine(path);
             string l_fileName = whichFileName(teamName, path);
-
+            
             // If no file has been found, create a new one with the given team name
             if (l_fileName.Equals(""))
             {
                 l_fileName = teamName + Constants.xmlExtension;
                 generateEmptyFile(teamName, path);
             }
-
+            
             // Load the file
             //Load(path + "/" + fileName);
             Load(l_fileName);
