@@ -3,25 +3,25 @@ using UnityEngine;
 using UnityEditor;
 
 
-[CustomEditor(typeof(Brain))]
+[CustomEditor(typeof(ActionUnit))]
 [CanEditMultipleObjects]
 
 public class ActionsEditorShow : Editor
 {
-    Brain myTarget;
+    ActionUnit myTarget;
 
     void OnEnable()
     {
-        myTarget = (Brain)target;
+        myTarget = (ActionUnit)target;
     }
 
     public override void OnInspectorGUI()
     {
-        Brain myTarget = (Brain)target;
-        GUILayout.Label("Current Action :", EditorStyles.boldLabel);
-        if (myTarget._instructions != null)
+        ActionUnit myTarget = (ActionUnit)target;
+        GUILayout.Label("Possible actions :", EditorStyles.boldLabel);
+        foreach (string key in myTarget._actions.Keys)
         {
-            EditorGUILayout.LabelField(">>> " + myTarget.NextAction());
+            EditorGUILayout.LabelField("> " + key);
         }
     }
 }

@@ -19,10 +19,14 @@ public class LookAtPointEditor : Editor
     {
         PerceptUnit myTarget = (PerceptUnit)target;
         GUILayout.Label("Percepts :", EditorStyles.boldLabel);
+        
+        
         foreach (string key in myTarget._percepts.Keys)
         {
-            string b = (myTarget._percepts[key]()) ? "O" : "X";
-            EditorGUILayout.LabelField("[" + b + "] " + key );
+            GUIStyle s = new GUIStyle();
+            s.normal.textColor = new Color(0.6f, 0.1f, 0.1f);
+            if (myTarget._percepts[key]()) { s.normal.textColor = new Color(0.1f,0.6f, 0.1f); }
+            EditorGUILayout.LabelField("> " + key, s);
         }
     }
 }
