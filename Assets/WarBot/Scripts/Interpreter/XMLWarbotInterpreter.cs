@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEditor;
 using System.Xml;
 using System.IO;
 
@@ -145,7 +146,7 @@ namespace UnityTER.Interpreter
                 l_fileName = teamName;
 
             List<Instruction> l_behavior = new List<Instruction>();
-
+            
             using (FileStream stream = new FileStream(l_fileName, FileMode.Open))
             {
                 Load(stream);
@@ -182,7 +183,7 @@ namespace UnityTER.Interpreter
                 l_fileName = teamName + Constants.xmlExtension;
                 generateEmptyFile(teamName, path);
             }
-            
+
             // Load the file
             //Load(path + "/" + fileName);
             Load(l_fileName);

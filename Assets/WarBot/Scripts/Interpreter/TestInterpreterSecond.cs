@@ -3,49 +3,66 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityTER.Interpreter;
+using System.IO;
 
 //[assembly: AssemblyVersionAttribute("1.0")]
 public class TestInterpreterSecond : MonoBehaviour
 {
     
     public List<Instruction> _instruction = new List<Instruction>();
-    public int i = 2;
+
 
     void Start()
     {
-        string teamName = "TestInterpret";
-        string unitName = "Light";
+        string teamName = "FooTeam";
+        string unitName = "Unit";
+        string gameName = "TestBot";
 
 
         XMLWarbotInterpreter interpreter = new XMLWarbotInterpreter();
         List<Instruction> behavior = new List<Instruction>();
 
         // INSTRUCTION DE EAT DES LIGHTS
-        string[] percepts = new string[] { "PERCEPT_FOOD_INVENTORY", "PERCEPT_LIFE_NOT_MAX" };
-        string action = "ACTION_EAT";
+        string[] percepts1 = new string[] { "PERCEPT_FOOD_INVENTORY", "PERCEPT_LIFE_NOT_MAX" };
+        string action1 = "ACTION_EAT";
+
+        string[] percepts2 = new string[] {};
+        string action2 = "ACTION_MOVE";
 
 
-        Instruction i = new Instruction(percepts, action);
-        behavior.Add(i);
+        Instruction i1 = new Instruction(percepts1, action1);
+        Instruction i2 = new Instruction(percepts2, action2);
+        behavior.Add(i1);
+        behavior.Add(i2);
 
-        interpreter.behaviorToXml(teamName, Constants.teamsDirectory, unitName, behavior);
-        System.Console.WriteLine("Ecriture fichier XML termine.");
+        string _teamPath = Constants.teamsDirectory + gameName + "/" + teamName + "/";
+
+        if (!Directory.Exists(_teamPath))
+        {
+            //if it doesn't, create it
+            Directory.CreateDirectory(_teamPath);
+
+        }
+
+        //check if directory doesn't exit
+        if (!Directory.Exists(_teamPath))
+        {
+            //if it doesn't, create it
+            Directory.CreateDirectory(_teamPath);
+
+        }
+
+        interpreter.behaviorToXml(teamName, _teamPath, unitName, behavior);
+        print("Ecriture fichier XML termine.");
         System.Console.ReadLine();
 
         /* */
 
         List<Instruction> behavior2 = new List<Instruction>();
-        behavior2 = interpreter.xmlToUnitBehavior(teamName, Constants.teamsDirectory, unitName);
+        behavior2 = interpreter.xmlToUnitBehavior(teamName, _teamPath, unitName);
         _instruction = behavior2;
-        System.Console.WriteLine("count : " + behavior2.Count);
-        for (int cpt = 0; cpt < behavior2.Count; cpt++)
-        {
-            System.Console.WriteLine(behavior2[cpt].getStringAction());
-            foreach (string s in behavior2[cpt]._listeStringPerceptsVoulus)
-                System.Console.WriteLine(s);
-        }
-
-        System.Console.WriteLine("Construction du comportement depuis fichier XML termine.");
+        
+        print("Construction du comportement depuis fichier XML termine.");
         System.Console.ReadLine();
 
         /* */

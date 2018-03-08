@@ -33,7 +33,7 @@ public class PerceptEnnemy : Percept
                 if (gO.GetComponent<UnitManager>() != null)
                 {
                     
-                    if (gOmanager.GetComponent<Stats>() && gOmanager.GetComponent<Stats>()._myTeam._color != GetComponent<Stats>()._myTeam._color)
+                    if (gOmanager.GetComponent<Stats>() && gOmanager.GetComponent<Stats>()._teamIndex != GetComponent<Stats>()._teamIndex)
                     {
                         _gameObject = gO;
                         angleEnemy = getAngle();

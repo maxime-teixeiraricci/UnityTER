@@ -19,17 +19,8 @@ public class MovableCharacter : MonoBehaviour
     {
         vectMov = Utility.vectorFromAngle(GetComponent<Stats>()._heading) ;
         nextposition = transform.position + vectMov.normalized * speed * Time.deltaTime;
-
-        
-
-        if (!isBlocked())
-        {
-            
-            _isblocked = false;
-            transform.position = nextposition;
-        }
-        
-        else { _isblocked = true; }
+        _isblocked = isBlocked();
+        if (!_isblocked) { transform.position = nextposition; }
         _obstacleEncounter = false;
     }
 
@@ -52,7 +43,7 @@ public class MovableCharacter : MonoBehaviour
     {
         if (other.gameObject.tag != "Ground")
         {
-            print("Collide ! " + other.gameObject);
+
             _isblocked = true;
             transform.position += (transform.position - other.gameObject.transform.position).normalized * 0.01f;
         }

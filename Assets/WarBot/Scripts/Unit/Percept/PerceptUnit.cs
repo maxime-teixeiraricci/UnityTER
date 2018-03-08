@@ -1,52 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class PerceptUnit : Percept {
+[Serializable]
+public class PerceptUnit : MonoBehaviour
+{
+    public delegate bool Listener();
+    public GameObject _target;
 
-    public PerceptUnit()
-    {
-        _perceptName = "PERCEPT_UNIT";
-        _value = false;
-        _gameObject = null;
-    }
 
-    override public void update()
+    public Dictionary<string, Listener> _percepts = new Dictionary<string, Listener> ();
+
+
+    void Start()
     {
-        Brain brain = GetComponent<Brain>();
-        Sight sight = brain.GetComponent<Sight>();
-        List<GameObject> _listOfUnitColl = new List<GameObject>();
-        foreach (GameObject gO in sight._listOfCollision){
-            UnitManager gOmanager = gO.GetComponent<UnitManager>();
-            if (gO.GetComponent<UnitManager>() != null)
+        _percepts["PERCEPT_LIFE_MAX"] = delegate () { return GetComponent<Stats>()._maxHealth == GetComponent<Stats>()._health; };
+        _percepts["PERCEPT_BLOCKED"] = delegate () { return GetComponent<Stats>()._isBlocked; };
+        _percepts["PERCEPT_LIFE_NOT_MAX"] = delegate () { return GetComponent<Stats>()._maxHealth != GetComponent<Stats>()._health; };
+        _percepts["PERCEPT_BAG_FULL"] = delegate () { return GetComponent<Inventory>()._maxSize == GetComponent<Inventory>()._actualSize; };
+        _percepts["PERCEPT_BASE_NEAR"] = delegate ()
+        {
+            bool res = false;
+            _target = null;
+            foreach (GameObject gO in GetComponent<Sight>()._listOfCollision)
             {
-                if (!(gOmanager.GetComponent<Stats>()._myTeam == (GetComponent<Stats>()._myTeam)))
+                if (gO.GetComponent<Stats>() != null && gO.GetComponent<Stats>()._unitType == "base" && Vector3.Distance(transform.position, gO.transform.position) < 3.5f)
                 {
-                    _listOfUnitColl.Add(gO);
+                    _target = gO;
+                    res = true;
+                    break;
                 }
             }
-        }
-        if (_listOfUnitColl.Count > 0)
+            return res;
+        };
+        _percepts["PERCEPT_FOOD"] = delegate ()
         {
-            
-            
-            _gameObject = _listOfUnitColl[0];
-            GetComponent<Stats>()._heading = getAngle();
-            _value = true;
-        }
-        else
+            bool res = false;
+            _target = null;
+            foreach (GameObject gO in GetComponent<Sight>()._listOfCollision)
+            {
+                if (gO.tag == "Item")
+                {
+                    _target = gO;
+                    res = true;
+                    break;
+                }
+            }
+            return res;
+        };
+        _percepts["PERCEPT_FOOD_NEAR"] = delegate ()
         {
-            _value = false;
-            _gameObject = null;
-        }
+            return (_percepts["PERCEPT_FOOD"]()) && (Vector3.Distance(_target.transform.position, transform.position) < 1.5f);
+        };
     }
 
-    public int getAngle()
-    {
-        Vector3 vect = _gameObject.transform.position - transform.position;
-        Vector3 projVect = Vector3.ProjectOnPlane(vect, Vector3.up);
-
-        return (int)(360-Vector3.Angle(projVect, new Vector3(1,0,0)));
-
-    }
 }

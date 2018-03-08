@@ -6,21 +6,16 @@ public class Inventory : MonoBehaviour{
 
     [SerializeField]
     public Dictionary<Objet,int> _objets = new Dictionary<Objet, int>();
+
     [SerializeField]
     public int _maxSize;
     [SerializeField]
     public int _actualSize;
-
-    public bool _giveTen;
+    
     public Objet _ressource;
 
     void Update()
     {
-        if (_giveTen)
-        {
-            add(_ressource);
-            _giveTen = false;
-        }
 
     }
 
@@ -46,6 +41,11 @@ public class Inventory : MonoBehaviour{
             return true;
         }
         else return false;
+    }
+
+    public void use()
+    {
+
     }
 
     public bool isFull()

@@ -1,0 +1,27 @@
+<behavior>
+  <teamName>TestTeam</teamName>
+  <unit name="Unit">
+    <instruction>
+      <parameters>
+        <PERCEPT_FOOD_NEAR />
+      </parameters>
+      <actions>
+        <ACTION_IDLE />
+      </actions>
+    </instruction>
+    <instruction>
+      <parameters>
+        <PERCEPT_BLOCKED />
+      </parameters>
+      <actions>
+        <ACTION_RANDOM_MOVE />
+      </actions>
+    </instruction>
+    <instruction>
+      <parameters />
+      <actions>
+        <ACTION_MOVE />
+      </actions>
+    </instruction>
+  </unit>
+</behavior>

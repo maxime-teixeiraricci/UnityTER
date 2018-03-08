@@ -5,52 +5,49 @@ using UnityEngine;
 
 public class Brain : MonoBehaviour
 {
-    public ActionStructure[] _actions;
-    public InstructionScriptable[] _instructions;
-    public bool _debugShoot;
+    
+    public List<Instruction> _instructions;
+    public PerceptUnit _percepts;
+    public ActionUnit _actions;
+    private string _currentAction;
 
+    [ExecuteInEditMode]
     void Start()
     {
-        GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
+        //GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
+        _instructions = GameObject.Find("GameManager").GetComponent<TeamManager>().getUnitsBevahiours(GetComponent<Stats>()._teamIndex, GetComponent<Stats>()._unitType);
+        print("Nombre Instruction : " + _instructions.Count);
+        _percepts = GetComponent<PerceptUnit>();
+        _actions = GetComponent<ActionUnit>();
     }
 
     void Update()
     {
-        foreach(InstructionScriptable instr in _instructions)
+        if (_instructions != null)
         {
-            Action actionPossible = this.actionPossible(instr._stringAction);
-            if (actionPossible != null && instr.verify(GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts))
-            {
-                actionPossible.Do();
-                print("" + actionPossible.ToString());
-                break;
-            }
+            string _action = NextAction();
+            _actions._actions[_action]();
         }
-
-        /*PerceptStructure[] listePercepts = GetComponent<UnitManager>().GetComponent<PerceptManager>()._percepts;
-        if (!listePercepts[0]._percept._value)
-            _actions[0].Do(); // Move*/
-        
-        
-        /*_actions[0].Do();
-        if (_debugShoot)
-        {
-            _actions[1].Do();
-            _debugShoot = false;
-        }*/
     }
 
-    public Action actionPossible(string stringAct)
+    public string NextAction()
     {
-        Action presence = null;
-        foreach (ActionStructure actStruc in _actions)
+        foreach (Instruction instruction in _instructions)
         {
-            if (actStruc._name.Equals(stringAct))
-            {
-                presence = actStruc._action;
-            }
+            if (Verify(instruction)) { return instruction._stringAction; }
         }
-        return presence;
+        return "ACTION_IDLE";
     }
+
+    bool Verify(Instruction instruction)
+    {
+        foreach(string percept in instruction._listeStringPerceptsVoulus)
+        {
+            if ( !(_percepts._percepts.ContainsKey(percept) && _percepts._percepts[percept]()) ) { return false; }
+        }
+        return true;
+    }
+
+    
 
 }
