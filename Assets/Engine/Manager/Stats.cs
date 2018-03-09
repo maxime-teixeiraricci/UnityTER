@@ -8,7 +8,7 @@ public class Stats : MonoBehaviour
     [Header("Unit type")]
     public string _unitType;
     public int _teamIndex;
-    public GameObject _unitTarget;
+    public GameObject _target;
 
     [Header("Stats")]
     public float _heading;
@@ -16,7 +16,7 @@ public class Stats : MonoBehaviour
     public int _health;
     public int _maxHealth;
     public float _reloadTime;
-    public Vector3 _target;
+    //public Vector3 _target;
     public Vector3 _objectif;
 
     void Start()
@@ -29,7 +29,7 @@ public class Stats : MonoBehaviour
         _reloadTime -= Time.deltaTime;
 
         _heading = (_heading + 360) % 360;
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, _heading +90 , transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, _heading , transform.eulerAngles.z);
         if (GetComponent<MovableCharacter>())
         {
             _isBlocked = GetComponent<MovableCharacter>()._isblocked;

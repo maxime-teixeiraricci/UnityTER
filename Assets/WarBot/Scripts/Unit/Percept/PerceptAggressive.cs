@@ -41,7 +41,7 @@ public class PerceptAggressive : PerceptCommon
             Brain brain = GetComponent<Brain>();
             Sight sight = brain.GetComponent<Sight>();
             List<GameObject> _listOfUnitColl = new List<GameObject>();
-            GameObject _gameObject = GetComponent<Stats>()._unitTarget;
+            GameObject _gameObject = GetComponent<Stats>()._target;
             int angleEnemy;
 
 
