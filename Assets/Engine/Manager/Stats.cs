@@ -8,7 +8,8 @@ public class Stats : MonoBehaviour
     [Header("Unit type")]
     public string _unitType;
     public int _teamIndex;
-    public GameObject _unitTarget;
+    public GameObject _target;
+    public Objet _objectToUse;
 
     [Header("Stats")]
     public float _heading;
@@ -16,7 +17,7 @@ public class Stats : MonoBehaviour
     public int _health;
     public int _maxHealth;
     public float _reloadTime;
-    public Vector3 _target;
+    //public Vector3 _target;
     public Vector3 _objectif;
 
     void Start()
