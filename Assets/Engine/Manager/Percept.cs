@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Percept : MonoBehaviour
+public class Percept : MonoBehaviour
 {
-    public string _perceptName;
-    public bool _value;
-    public GameObject _gameObject;
-
-    public abstract void update();
+    public delegate bool Listener();
+    public GameObject _target;
+    public Dictionary<string, Listener> _percepts = new Dictionary<string, Listener>();
 
 }

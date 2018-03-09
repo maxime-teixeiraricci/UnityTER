@@ -7,7 +7,7 @@ public class Brain : MonoBehaviour
 {
     
     public List<Instruction> _instructions;
-    public PerceptUnit _percepts;
+    public Percept _percepts;
     public ActionUnit _actions;
     private string _currentAction;
 
@@ -17,7 +17,7 @@ public class Brain : MonoBehaviour
         //GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
         _instructions = GameObject.Find("GameManager").GetComponent<TeamManager>().getUnitsBevahiours(GetComponent<Stats>()._teamIndex, GetComponent<Stats>()._unitType);
         print("Nombre Instruction : " + _instructions.Count);
-        _percepts = GetComponent<PerceptUnit>();
+        _percepts = GetComponent<Percept>();
         _actions = GetComponent<ActionUnit>();
     }
 

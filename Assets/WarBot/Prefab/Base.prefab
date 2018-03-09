@@ -22,15 +22,9 @@ GameObject:
   - component: {fileID: 114918931186778126}
   - component: {fileID: 114924599565993884}
   - component: {fileID: 114389021727794502}
-  - component: {fileID: 114077437243004062}
   - component: {fileID: 114057481101030224}
   - component: {fileID: 114989040910869904}
-  - component: {fileID: 114508001269111546}
-  - component: {fileID: 114163041120341088}
-  - component: {fileID: 114055723797313480}
   - component: {fileID: 135492026105600732}
-  - component: {fileID: 114823557996070764}
-  - component: {fileID: 114155879603573868}
   - component: {fileID: 54318125407207508}
   - component: {fileID: 65165334790342724}
   m_Layer: 0
@@ -728,21 +722,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114055723797313480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079369206059762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a41c1e977f7281b46b43c692268d3770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _perceptName: PERCEPT_FOOD_INVENTORY
-  _value: 0
-  _gameObject: {fileID: 0}
-  _objetFood: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
 --- !u!114 &114057481101030224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -756,49 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSize: 1000
   _actualSize: 0
-  _giveTen: 0
   _ressource: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
---- !u!114 &114077437243004062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079369206059762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ebc2e3531bc1d44af600ac5a13a344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _percepts:
-  - {fileID: 114163041120341088}
-  - {fileID: 114055723797313480}
---- !u!114 &114155879603573868
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079369206059762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6977787fe94302d4293e49bc646dcd02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ressource: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
-  _unitToCreate: {fileID: 0}
---- !u!114 &114163041120341088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079369206059762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777d6e4c9e4162540af0fe3224081ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _perceptName: 
-  _value: 0
-  _gameObject: {fileID: 0}
 --- !u!114 &114389021727794502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -815,40 +752,6 @@ MonoBehaviour:
   _sphereCollider: {fileID: 135492026105600732}
   _brain: {fileID: 0}
   _listOfCollision: []
---- !u!114 &114508001269111546
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079369206059762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476f6ae3ea3a79341a732119715f28e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 0, g: 0.503448, b: 1, a: 1}
-  _meshRenderer:
-  - {fileID: 23442572356884814}
-  - {fileID: 23597513447245254}
-  - {fileID: 23963582404590824}
-  - {fileID: 23742326789283882}
-  - {fileID: 23496842794147348}
-  - {fileID: 23310424433240204}
-  - {fileID: 23993311114589144}
-  - {fileID: 23799440376075210}
-  - {fileID: 23321476405439574}
---- !u!114 &114823557996070764
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079369206059762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373d49693f5d5774397670f22ee644df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healingObject: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
 --- !u!114 &114918931186778126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -864,7 +767,7 @@ MonoBehaviour:
   _inventory: {fileID: 114057481101030224}
   _sight: {fileID: 114389021727794502}
   _brain: {fileID: 114989040910869904}
-  _percept: {fileID: 114077437243004062}
+  _percept: {fileID: 0}
 --- !u!114 &114924599565993884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -877,14 +780,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitType: base
+  _teamIndex: 0
   _heading: 0
-  _myTeam: {fileID: 114508001269111546}
   _isBlocked: 0
   _health: 2000
   _maxHealth: 4500
   _reloadTime: 0
-  _deathAnimation: {fileID: 198578334095544314, guid: 2d1cdd4b67cac7f46b805e9e3fcdc152,
-    type: 2}
   _target: {x: 0, y: 0, z: 0}
   _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &114989040910869904
@@ -898,15 +799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa7b92dec9baf34782388a22c9f006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actions:
-  - _name: ACTION_EAT
-    _action: {fileID: 114823557996070764}
-  - _name: ACTION_LIGHT_CREATE
-    _action: {fileID: 114155879603573868}
-  _instructions:
-  - {fileID: 11400000, guid: 0ef2d19ec3e9b124ca95d7e3e96daad2, type: 2}
-  - {fileID: 11400000, guid: ee2bebd4eaeee8b43b191b0d6e48926e, type: 2}
-  _debugShoot: 0
+  _percepts: {fileID: 0}
+  _actions: {fileID: 0}
 --- !u!135 &135492026105600732
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -3,26 +3,27 @@ using UnityEngine;
 using UnityEditor;
 
 
-[CustomEditor(typeof(PerceptUnit))]
+[CustomEditor(typeof(Percept), true )]
 [CanEditMultipleObjects]
 
 public class LookAtPointEditor : Editor
 {
-    PerceptUnit myTarget;
+    Percept myTarget;
 
     void OnEnable()
     {
-        myTarget = (PerceptUnit)target;
+        myTarget = (Percept)target;
     }
 
     public override void OnInspectorGUI()
     {
-        PerceptUnit myTarget = (PerceptUnit)target;
+        Percept myTarget = (Percept)target;
         GUILayout.Label("Percepts :", EditorStyles.boldLabel);
         
         
         foreach (string key in myTarget._percepts.Keys)
         {
+            Debug.Log(key);
             GUIStyle s = new GUIStyle();
             s.normal.textColor = new Color(0.6f, 0.1f, 0.1f);
             if (myTarget._percepts[key]()) { s.normal.textColor = new Color(0.1f,0.6f, 0.1f); }
