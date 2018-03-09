@@ -9,7 +9,7 @@ public class Stats : MonoBehaviour
     public string _unitType;
     public int _teamIndex;
     public GameObject _target;
-
+    public Objet _objectToUse;
     [Header("Stats")]
     public float _heading;
     public bool _isBlocked;
