@@ -53,6 +53,44 @@ public class PerceptUnit : MonoBehaviour
         {
             return (_percepts["PERCEPT_FOOD"]()) && (Vector3.Distance(_target.transform.position, transform.position) < 1.5f);
         };
-    }
+        _percepts["PERCEPT_ENEMY"] = delegate ()
+        {
 
+            Brain brain = GetComponent<Brain>();
+            Sight sight = brain.GetComponent<Sight>();
+            List<GameObject> _listOfUnitColl = new List<GameObject>();
+            GameObject _gameObject = GetComponent<Stats>()._unitTarget;
+            int angleEnemy;
+
+
+            foreach (GameObject gO in sight._listOfCollision)
+            {
+                if (gO && !_gameObject)
+                {
+                        if (gO.GetComponent<Stats>() && gO.GetComponent<Stats>()._teamIndex != GetComponent<Stats>()._teamIndex)
+                        {
+                            _gameObject = gO;
+                            angleEnemy = getAngle(_gameObject);
+                            GetComponent<Stats>()._heading = getAngle(_gameObject);
+                            return true;
+                        }
+                }
+            }
+            return false;
+        };
+
+}
+
+    public int getAngle(GameObject _gameObject)
+    {
+        Vector3 vect = _gameObject.transform.position - transform.position;
+        Vector3 projVect = Vector3.ProjectOnPlane(vect, Vector3.up);
+
+        if (projVect.z > 0)
+        {
+            return (int)(360 - Vector3.Angle(projVect, new Vector3(1, 0, 0)));
+        }
+        return (int)(Vector3.Angle(projVect, new Vector3(1, 0, 0)));
+
+    }
 }

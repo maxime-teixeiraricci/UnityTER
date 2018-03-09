@@ -10,7 +10,7 @@ public class TestUnitBehaviour : MonoBehaviour
 	void Start ()
     {
         List<Instruction> behavior = new List<Instruction>(){
-            new Instruction(new string[] { "PERCEPT_FOOD_NEAR" }, "ACTION_IDLE"),
+            new Instruction(new string[] { "PERCEPT_ENEMY" }, "ACTION_IDLE"),
             new Instruction(new string[] { "PERCEPT_BLOCKED" }, "ACTION_RANDOM_MOVE"),
             new Instruction(new string[] { }, "ACTION_MOVE") };
         string gamePath = "./teams/" + GetComponent<GameManager>()._gameName + "/";

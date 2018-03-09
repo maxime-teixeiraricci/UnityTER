@@ -3,7 +3,7 @@
   <unit name="Unit">
     <instruction>
       <parameters>
-        <PERCEPT_FOOD_NEAR />
+        <PERCEPT_ENEMY />
       </parameters>
       <actions>
         <ACTION_IDLE />

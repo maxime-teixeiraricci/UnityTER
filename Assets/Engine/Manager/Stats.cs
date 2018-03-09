@@ -8,6 +8,7 @@ public class Stats : MonoBehaviour
     [Header("Unit type")]
     public string _unitType;
     public int _teamIndex;
+    public GameObject _unitTarget;
 
     [Header("Stats")]
     public float _heading;
