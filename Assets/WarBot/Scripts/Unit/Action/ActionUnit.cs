@@ -20,5 +20,11 @@ public class ActionUnit : MonoBehaviour
         };
         _actions["ACTION_HEAL"] = delegate () { GetComponent<Inventory>().use(); };
         _actions["ACTION_IDLE"] = delegate () { };
+
+        _actions["ACTION_PICK"] = delegate () { };
+        _actions["ACTION_GIVE"] = delegate () { };
+        _actions["ACTION_FIRE"] = delegate () { };
+        _actions["ACTION_RELOAD"] = delegate () { };
+        _actions["ACTION_CREATE"] = delegate () { };
     }
 }
