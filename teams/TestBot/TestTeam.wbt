@@ -6,7 +6,7 @@
         <PERCEPT_ENEMY />
       </parameters>
       <actions>
-        <ACTION_IDLE />
+        <ACTION_RANDOM_MOVE />
       </actions>
     </instruction>
     <instruction>

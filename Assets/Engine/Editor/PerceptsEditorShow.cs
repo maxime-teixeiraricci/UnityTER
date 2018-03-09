@@ -23,7 +23,7 @@ public class LookAtPointEditor : Editor
         
         foreach (string key in myTarget._percepts.Keys)
         {
-            Debug.Log(key);
+
             GUIStyle s = new GUIStyle();
             s.normal.textColor = new Color(0.6f, 0.1f, 0.1f);
             if (myTarget._percepts[key]()) { s.normal.textColor = new Color(0.1f,0.6f, 0.1f); }
