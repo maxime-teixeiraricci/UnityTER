@@ -18,22 +18,20 @@ public class PerceptAggressive : PerceptCommon
         base.InitPercept();
         _percepts["PERCEPT_FOOD"] = delegate ()
         {
-            bool res = false;
-            _target = null;
+            GetComponent<Stats>()._target = null;
             foreach (GameObject gO in GetComponent<Sight>()._listOfCollision)
             {
                 if (gO.tag == "Item")
                 {
-                    _target = gO;
-                    res = true;
-                    break;
+                    GetComponent<Stats>()._target = gO;
+                    return true;
                 }
             }
-            return res;
+            return false;
         };
         _percepts["PERCEPT_FOOD_NEAR"] = delegate ()
         {
-            return (_percepts["PERCEPT_FOOD"]()) && (Vector3.Distance(_target.transform.position, transform.position) < 1.5f);
+            return (_percepts["PERCEPT_FOOD"]()) && (Vector3.Distance(GetComponent<Stats>()._target.transform.position, transform.position) < 2f);
         };
         _percepts["PERCEPT_ENEMY"] = delegate ()
         {

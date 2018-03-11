@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(Stats))]
+[RequireComponent(typeof(Sight))]
 public class Brain : MonoBehaviour
 {
     
@@ -15,6 +19,7 @@ public class Brain : MonoBehaviour
     void Start()
     {
         //GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
+        GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
         _instructions = GameObject.Find("GameManager").GetComponent<TeamManager>().getUnitsBevahiours(GetComponent<Stats>()._teamIndex, GetComponent<Stats>()._unitType);
         print("Nombre Instruction : " + _instructions.Count);
         _percepts = GetComponent<Percept>();

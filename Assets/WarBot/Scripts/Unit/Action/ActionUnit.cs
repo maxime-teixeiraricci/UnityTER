@@ -45,18 +45,12 @@ public class ActionUnit : MonoBehaviour
             }
         };
         _actions["ACTION_FIRE"] = delegate () {
-            GameObject target = GetComponent<Stats>()._target;
-            if (target != null)
+            if (GetComponent<Stats>()._reloadTime <= 0)
             {
-                if (GetComponent<Stats>()._reloadTime <= 0)
-                {
-                    GameObject bullet = Instantiate(_bullet, this.transform.position, Quaternion.identity);
-                    bullet.GetComponent<BulletScript>()._owner = gameObject;
-                    bullet.GetComponent<BulletScript>()._vect = transform.forward;
-                }
+                GetComponent<Shooter>().Shoot();
             }
         };
-        _actions["ACTION_RELOAD"] = delegate () { };
+        _actions["ACTION_RELOAD"] = delegate () { GetComponent<Stats>()._reloadTime -= Time.deltaTime; };
         _actions["ACTION_CREATE"] = delegate () {
             GameObject target = GetComponent<Stats>()._target;
             Objet objectToUse = GetComponent<Stats>()._objectToUse;

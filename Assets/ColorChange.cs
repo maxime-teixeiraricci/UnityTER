@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ColorChange : MonoBehaviour
 {
-    public Material[] _materials;
+    public MeshRenderer[] _materials;
 	// Use this for initialization
 	void Start ()
     {
-		foreach (Material mat in _materials)
+		foreach (MeshRenderer mesh in _materials)
         {
-            mat.color = GameObject.Find("GameManager").GetComponent<TeamManager>()._teams[GetComponent<Stats>()._teamIndex]._color;
+            foreach (Material mat in mesh.materials)
+            {
+                mat.color = GameObject.Find("GameManager").GetComponent<TeamManager>()._teams[GetComponent<Stats>()._teamIndex]._color;
+            }
         }
 	}
 	

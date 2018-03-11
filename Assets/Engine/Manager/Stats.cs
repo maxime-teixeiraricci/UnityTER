@@ -10,6 +10,8 @@ public class Stats : MonoBehaviour
     public int _teamIndex;
     public GameObject _target;
     public Objet _objectToUse;
+    public GameObject _bullet;
+
     [Header("Stats")]
     public float _heading;
     public bool _isBlocked;
@@ -26,7 +28,7 @@ public class Stats : MonoBehaviour
 
     void Update()
     {
-        _reloadTime -= Time.deltaTime;
+        //_reloadTime -= Time.deltaTime;
 
         _heading = (_heading + 360) % 360;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, _heading , transform.eulerAngles.z);

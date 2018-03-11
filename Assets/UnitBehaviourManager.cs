@@ -13,13 +13,12 @@ public class UnitBehaviourManager : MonoBehaviour
         XMLWarbotInterpreter interpreter = new XMLWarbotInterpreter();
         GameManager GM = GetComponent<GameManager>();
 
-        string _gameDirectory = "" + GM._gameName + "/";
-        string _teamExemple = "FooTeam";
+        string gamePath = "./teams/" + GetComponent<GameManager>()._gameName + "/";
 
 
         foreach (string type in _unitsTypes)
         {
-            interpreter.xmlToUnitBehavior(_teamExemple, _gameDirectory + Constants.teamsDirectory, type);
+            interpreter.xmlToUnitBehavior(GetComponent<TeamManager>()._teams[0]._name, gamePath + Constants.teamsDirectory, type);
         }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Percept : MonoBehaviour
 {
     public delegate bool Listener();
-    public GameObject _target;
     public Dictionary<string, Listener> _percepts = new Dictionary<string, Listener>();
 
 }
