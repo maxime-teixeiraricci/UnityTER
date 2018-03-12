@@ -10,6 +10,9 @@ public class TestUnitBehaviour : MonoBehaviour
 	void Start ()
     {
         List<Instruction> behavior = new List<Instruction>(){
+            new Instruction(new string[] { "PERCEPT_BASE_NEAR_ALLY", "PERCEPT_BAG_NOT_EMPTY"}, "ACTION_GIVE_RESSOURCE"),
+            new Instruction(new string[] { "PERCEPT_BAG_FULL"}, "ACTION_BACK_TO_BASE"),
+            new Instruction(new string[] { "PERCEPT_LIFE_NOT_MAX","PERCEPT_BAG_NOT_EMPTY"}, "ACTION_HEAL"),
             new Instruction(new string[] { "PERCEPT_BAG_NOT_FULL", "PERCEPT_FOOD_NEAR" }, "ACTION_PICK"),
             new Instruction(new string[] { "PERCEPT_BLOCKED" }, "ACTION_RANDOM_MOVE"),
             new Instruction(new string[] { }, "ACTION_MOVE") };
@@ -29,6 +32,12 @@ public class TestUnitBehaviour : MonoBehaviour
             new Instruction(new string[] { }, "ACTION_MOVE") };
         interpreter.behaviorToXml(teamName, gamePath, "Light", behavior);
         interpreter.behaviorToXml(teamName, gamePath, "Heavy", behavior);
+
+        behavior = new List<Instruction>(){
+            new Instruction(new string[] { "PERCEPT_LIFE_NOT_MAX","PERCEPT_BAG_NOT_EMPTY"}, "ACTION_HEAL"),
+            new Instruction(new string[] { "PERCEPT_BAG_25"}, "ACTION_CREATE_HEAVY"),
+        new Instruction(new string[] { "PERCEPT_BAG_10"}, "ACTION_CREATE_LIGHT")};
+        interpreter.behaviorToXml(teamName, gamePath, "Base", behavior);
     }
 	
 	// Update is called once per frame

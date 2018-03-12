@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23907736184419262}
   - component: {fileID: 114091383958803966}
   - component: {fileID: 54268714405836770}
+  - component: {fileID: 114505165305362300}
   m_Layer: 0
   m_Name: Ressource
   m_TagString: Item
@@ -215,6 +216,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heldObjet: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}
+--- !u!114 &114505165305362300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015467381009534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a870b2c8a43948146a72423425011a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mr:
+  - {fileID: 23907736184419262}
+  - {fileID: 23855168969714602}
 --- !u!135 &135931169741774238
 SphereCollider:
   m_ObjectHideFlags: 1

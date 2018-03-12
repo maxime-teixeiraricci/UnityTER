@@ -35,6 +35,11 @@ public class HP_HUDManager : MonoBehaviour
             {
                 _ressourceImage.gameObject.SetActive(true);
                 _ressourceText.gameObject.SetActive(true);
+                _ressourceText.color = Color.white;
+                if (_target.GetComponent<Inventory>()._actualSize == _target.GetComponent<Inventory>()._maxSize)
+                {
+                    _ressourceText.color = Color.red;
+                }
                 _ressourceText.text = "" + _target.GetComponent<Inventory>()._objets[ressource];
             }
             else

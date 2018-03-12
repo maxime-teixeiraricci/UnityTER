@@ -18,7 +18,7 @@ public class ActionUnit : MonoBehaviour
             GetComponent<Stats>()._heading = Random.Range(0, 360);
             GetComponent<MovableCharacter>().Move();
         };
-        _actions["ACTION_HEAL"] = delegate () { GetComponent<Inventory>().use(); };
+        _actions["ACTION_HEAL"] = delegate () { GetComponent<Inventory>().use("Ressource"); };
         _actions["ACTION_IDLE"] = delegate () { };
 
         _actions["ACTION_PICK"] = delegate () {
@@ -30,16 +30,14 @@ public class ActionUnit : MonoBehaviour
                 Destroy(target);
             }
         };
-        _actions["ACTION_GIVE"] = delegate () {
+        _actions["ACTION_GIVE_RESSOURCE"] = delegate () {
             GameObject target = GetComponent<Stats>()._target;
-            Objet objectToGive = GetComponent<Stats>()._objectToUse;
-            if (target != null && objectToGive != null)
+            if (target != null)
             {
-                Objet item = target.GetComponent<ItemHeldler>()._heldObjet;
+                Objet item = GetComponent<Inventory>().find("Ressource");
                 if (GetComponent<Inventory>()._objets.ContainsKey(item) && GetComponent<Inventory>()._objets[item] != 0 && target.GetComponent<Inventory>())
                 {
                     target.GetComponent<Inventory>().add(item);
-                    print("Base ressource : " + target.GetComponent<Inventory>()._objets[item]);
                     GetComponent<Inventory>().pop(item);
                 }
             }
@@ -51,27 +49,27 @@ public class ActionUnit : MonoBehaviour
             }
         };
         _actions["ACTION_RELOAD"] = delegate () { GetComponent<Stats>()._reloadTime -= Time.deltaTime; };
-        _actions["ACTION_CREATE"] = delegate () {
-            GameObject target = GetComponent<Stats>()._target;
-            Objet objectToUse = GetComponent<Stats>()._objectToUse;
-            if (target != null && objectToUse != null)
-            {
-                if (GetComponent<Inventory>()._objets[objectToUse] >= 10)
-                {
-                    Ray ray;
-                    float dx, dz;
-                    Vector3 pos;
-                    do
-                    {
-                        dx = Mathf.Cos(Random.Range(0, 2 * Mathf.PI));
-                        dz = Mathf.Sin(Random.Range(0, 2 * Mathf.PI));
-                        pos = new Vector3(4 * dx + transform.position.x, transform.position.y + 0.5f, 5 * dz + transform.position.z);
-                        ray = new Ray(pos, Vector3.down * 2);
+        _actions["ACTION_CREATE_LIGHT"] = delegate () {
+            Objet o = GetComponent<Inventory>().find("Ressource");
+            GetComponent<Inventory>()._objets[o] -= 10;
+            GetComponent<CreatorUnit>().Create("Light");
+        };
 
-                    } while (!Physics.Raycast(ray.origin, ray.direction));
-                    GameObject unit = Instantiate(target, pos, Quaternion.identity);
-                    unit.GetComponent<Team>()._color = GetComponent<Team>()._color;
-                    GetComponent<Inventory>()._objets[objectToUse] -= 10;
+        _actions["ACTION_CREATE_HEAVY"] = delegate () {
+            Objet o = GetComponent<Inventory>().find("Ressource");
+            GetComponent<Inventory>()._objets[o] -= 25;
+            GetComponent<CreatorUnit>().Create("Heavy");
+        };
+
+        _actions["ACTION_BACK_TO_BASE"] = delegate () {
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("Unit"))
+            {
+                if (go.GetComponent<Stats>()._unitType == "Base" && go.GetComponent<Stats>()._teamIndex == GetComponent<Stats>()._teamIndex)
+                {
+                    float a = Utility.getAngle(gameObject, go);
+                    GetComponent<Stats>()._heading = a;
+                    GetComponent<MovableCharacter>().Move();
+                    break;
                 }
             }
         };
