@@ -21,9 +21,9 @@ public class TestUnitBehaviour : MonoBehaviour
 
 
         behavior = new List<Instruction>(){
-            new Instruction(new string[] { "PERCEPT_IS_NOT_RELOADED", "PERCEPT_ENEMY"  }, "ACTION_RELOAD"),
-            new Instruction(new string[] { "PERCEPT_IS_RELOADED", "PERCEPT_ENEMY" }, "ACTION_FIRE"),
             new Instruction(new string[] { "PERCEPT_LIFE_NOT_MAX","PERCEPT_BAG_NOT_EMPTY"}, "ACTION_HEAL"),
+            new Instruction(new string[] { "PERCEPT_IS_NOT_RELOADED" }, "ACTION_RELOAD"),
+            new Instruction(new string[] { "PERCEPT_IS_RELOADED", "PERCEPT_ENEMY" }, "ACTION_FIRE"),
             new Instruction(new string[] { "PERCEPT_BAG_NOT_FULL", "PERCEPT_FOOD_NEAR" }, "ACTION_PICK"),
             new Instruction(new string[] { "PERCEPT_BLOCKED" }, "ACTION_RANDOM_MOVE"),
             new Instruction(new string[] { }, "ACTION_MOVE") };

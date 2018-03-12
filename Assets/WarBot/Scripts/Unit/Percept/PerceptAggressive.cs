@@ -21,7 +21,7 @@ public class PerceptAggressive : PerceptCommon
             GetComponent<Stats>()._target = null;
             foreach (GameObject gO in GetComponent<Sight>()._listOfCollision)
             {
-                if (gO.tag == "Item")
+                if (gO && gO.tag == "Item")
                 {
                     GetComponent<Stats>()._target = gO;
                     return true;
@@ -31,7 +31,7 @@ public class PerceptAggressive : PerceptCommon
         };
         _percepts["PERCEPT_FOOD_NEAR"] = delegate ()
         {
-            return (_percepts["PERCEPT_FOOD"]()) && (Vector3.Distance(GetComponent<Stats>()._target.transform.position, transform.position) < 2f);
+            return (_percepts["PERCEPT_FOOD"]()) && (Vector3.Distance(GetComponent<Stats>()._target.transform.position, transform.position) < 4f);
         };
         _percepts["PERCEPT_ENEMY"] = delegate ()
         {

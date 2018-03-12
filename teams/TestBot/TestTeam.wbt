@@ -28,8 +28,16 @@
   <unit name="Light">
     <instruction>
       <parameters>
+        <PERCEPT_LIFE_NOT_MAX />
+        <PERCEPT_BAG_NOT_EMPTY />
+      </parameters>
+      <actions>
+        <ACTION_HEAL />
+      </actions>
+    </instruction>
+    <instruction>
+      <parameters>
         <PERCEPT_IS_NOT_RELOADED />
-        <PERCEPT_ENEMY />
       </parameters>
       <actions>
         <ACTION_RELOAD />
@@ -42,15 +50,6 @@
       </parameters>
       <actions>
         <ACTION_FIRE />
-      </actions>
-    </instruction>
-    <instruction>
-      <parameters>
-        <PERCEPT_LIFE_NOT_MAX />
-        <PERCEPT_BAG_NOT_EMPTY />
-      </parameters>
-      <actions>
-        <ACTION_HEAL />
       </actions>
     </instruction>
     <instruction>
@@ -80,8 +79,16 @@
   <unit name="Heavy">
     <instruction>
       <parameters>
+        <PERCEPT_LIFE_NOT_MAX />
+        <PERCEPT_BAG_NOT_EMPTY />
+      </parameters>
+      <actions>
+        <ACTION_HEAL />
+      </actions>
+    </instruction>
+    <instruction>
+      <parameters>
         <PERCEPT_IS_NOT_RELOADED />
-        <PERCEPT_ENEMY />
       </parameters>
       <actions>
         <ACTION_RELOAD />
@@ -94,15 +101,6 @@
       </parameters>
       <actions>
         <ACTION_FIRE />
-      </actions>
-    </instruction>
-    <instruction>
-      <parameters>
-        <PERCEPT_LIFE_NOT_MAX />
-        <PERCEPT_BAG_NOT_EMPTY />
-      </parameters>
-      <actions>
-        <ACTION_HEAL />
       </actions>
     </instruction>
     <instruction>
