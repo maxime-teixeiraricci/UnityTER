@@ -29,8 +29,8 @@ public class HP_HUDManager : MonoBehaviour
             _value = Mathf.Max(0, Mathf.Min(_maxValue, _value));
             _HPImage.fillAmount = (1.0f * _value) / _maxValue;
             _HPText.text = "" + _value;
-            transform.position = Camera.main.WorldToScreenPoint(_target.transform.position + _delta);
-
+            transform.position = Camera.main.WorldToScreenPoint(_target.transform.position );
+            transform.position += _delta;
             if (_target.GetComponent<Inventory>()._objets.ContainsKey(ressource) && _target.GetComponent<Inventory>()._objets[ressource] > 0 )
             {
                 _ressourceImage.gameObject.SetActive(true);
@@ -38,7 +38,7 @@ public class HP_HUDManager : MonoBehaviour
                 _ressourceText.color = Color.white;
                 if (_target.GetComponent<Inventory>()._actualSize == _target.GetComponent<Inventory>()._maxSize)
                 {
-                    _ressourceText.color = Color.red;
+                    _ressourceText.color = Color.magenta;
                 }
                 _ressourceText.text = "" + _target.GetComponent<Inventory>()._objets[ressource];
             }

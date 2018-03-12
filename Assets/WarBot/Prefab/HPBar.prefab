@@ -275,7 +275,7 @@ MonoBehaviour:
   _maxValue: 0
   _HPText: {fileID: 114804751690895942}
   _HPImage: {fileID: 114143682128095260}
-  _delta: {x: 0, y: 3, z: 0}
+  _delta: {x: 0, y: 20, z: 0}
   _ressourceText: {fileID: 114269811358612268}
   _ressourceImage: {fileID: 114722484417039956}
   ressource: {fileID: 11400000, guid: 96c210943228bd244947536d2f1cc39f, type: 2}

@@ -5,9 +5,10 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     private Vector3 currentTarget;
+    public float _keySpeed;
     public float _speed;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -24,5 +25,11 @@ public class FollowCamera : MonoBehaviour
         res *= 1f / (units.Length + 1);
         currentTarget += (res - currentTarget) * Time.deltaTime * _speed;
         transform.LookAt(currentTarget);
-	}
+
+
+        if (Input.GetKey(KeyCode.UpArrow)) { transform.position += new Vector3(1, 0, 0) * Time.deltaTime * _keySpeed; }
+        if (Input.GetKey(KeyCode.DownArrow)) { transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * _keySpeed; }
+        if (Input.GetKey(KeyCode.LeftArrow)) { transform.position += new Vector3(0, 0, -1) * Time.deltaTime * _keySpeed; }
+        if (Input.GetKey(KeyCode.RightArrow)) { transform.position += new Vector3(0, 0, 1) * Time.deltaTime * _keySpeed; }
+    }
 }

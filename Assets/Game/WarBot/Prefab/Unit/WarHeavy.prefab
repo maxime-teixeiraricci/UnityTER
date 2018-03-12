@@ -156,7 +156,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ca6f4ece036ff0147b00ea954272795c, type: 3}
+  - {fileID: 2100000, guid: 137b56e1153329c4ca4b7759badcb1c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   _isBlocked: 0
   _health: 275
   _maxHealth: 275
-  _reloadTime: 3
+  _reloadTime: 0
   _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &114424686724352526
 MonoBehaviour:

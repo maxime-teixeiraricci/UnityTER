@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 114601341276728574}
   - component: {fileID: 114228534123011052}
   - component: {fileID: 114018871307719316}
+  - component: {fileID: 114808038850239514}
   m_Layer: 0
   m_Name: WarBase
   m_TagString: Unit
@@ -215,7 +216,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c531f69af93aba0468509422c1f398c9, type: 3}
+  - {fileID: 2100000, guid: 137b56e1153329c4ca4b7759badcb1c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -363,8 +364,8 @@ MonoBehaviour:
   _bullet: {fileID: 0}
   _heading: 0
   _isBlocked: 0
-  _health: 3600
-  _maxHealth: 3600
+  _health: 1000
+  _maxHealth: 1000
   _reloadTime: 0
   _objectif: {x: 0, y: 0, z: 0}
 --- !u!114 &114601341276728574
@@ -376,6 +377,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0aa9bc24293eaf41971386b9b03d92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114808038850239514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862762559995188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f8804dbaf35d54194183b0c561fe3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114903467683322418
