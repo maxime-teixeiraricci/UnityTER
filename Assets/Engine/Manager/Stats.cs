@@ -31,6 +31,7 @@ public class Stats : MonoBehaviour
         //_reloadTime -= Time.deltaTime;
 
         _heading = (_heading + 360) % 360;
+        _health = Mathf.Min(_health, _maxHealth);
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, _heading , transform.eulerAngles.z);
         if (GetComponent<MovableCharacter>())
         {

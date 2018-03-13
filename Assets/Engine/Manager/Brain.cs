@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Stats))]
 [RequireComponent(typeof(Sight))]
+[RequireComponent(typeof(Inventory))]
 public class Brain : MonoBehaviour
 {
     
@@ -22,7 +23,7 @@ public class Brain : MonoBehaviour
         //GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
         GameObject.Find("Canvas").GetComponent<HUDManager>().CreateHUD(gameObject);
         _instructions = GameObject.Find("GameManager").GetComponent<TeamManager>().getUnitsBevahiours(GetComponent<Stats>()._teamIndex, GetComponent<Stats>()._unitType);
-        print("Nombre Instruction : " + _instructions.Count);
+        print("Nombre Instruction : " + _instructions.Count + "["+ GetComponent<Stats>()._unitType+"]");
         _percepts = GetComponent<Percept>();
         _actions = GetComponent<ActionUnit>();
         _messageManager = new MessageManager(this.gameObject);

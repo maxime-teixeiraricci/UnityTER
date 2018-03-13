@@ -58,8 +58,17 @@ public class PerceptAggressive : PerceptCommon
             }
             return false;
         };
-    }
+    
+    _percepts["PERCEPT_NOT_ENEMY"] = delegate ()
+        {
+           if (GetComponent<Stats>()._target != null && GetComponent<Stats>()._target.GetComponent<Stats>())
+            {
+                return GetComponent<Stats>()._target.GetComponent<Stats>()._teamIndex == GetComponent<Stats>()._teamIndex;
+            }
+            return false;
+        };
 
+    }
     public int getAngle(GameObject _gameObject)
     {
         Vector3 vect = _gameObject.transform.position - transform.position;

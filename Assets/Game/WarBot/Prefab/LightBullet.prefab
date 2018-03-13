@@ -99,7 +99,7 @@ MonoBehaviour:
   _owner: {fileID: 0}
   _vect: {x: 0, y: 0, z: 0}
   _speed: 20
-  _damage: 15
+  _damage: 25
 --- !u!135 &135785549023784102
 SphereCollider:
   m_ObjectHideFlags: 1

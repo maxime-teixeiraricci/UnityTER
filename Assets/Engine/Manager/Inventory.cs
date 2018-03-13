@@ -16,7 +16,11 @@ public class Inventory : MonoBehaviour{
 
     void Update()
     {
-
+        _actualSize = 0;
+        foreach (Objet o in _objets.Keys)
+        {
+            _actualSize += _objets[o];
+        }
     }
 
     public bool add(Objet obj)
@@ -32,6 +36,18 @@ public class Inventory : MonoBehaviour{
         else return false;
     }
 
+    public Objet find(string objectName)
+    {
+        foreach (Objet objet in _objets.Keys)
+        {
+            if (objet._name.Equals(objectName))
+            {
+                return objet;
+            }
+        }
+        return null;
+    }
+
     public bool pop(Objet obj)
     {
         if (_objets.ContainsKey(obj) && _objets[obj] > 0)
@@ -43,9 +59,18 @@ public class Inventory : MonoBehaviour{
         else return false;
     }
 
-    public void use()
+    public void use(string objectName)
     {
-
+        ItemMethod _im = GameObject.Find("Item Manager").GetComponent<ItemMethod>();
+        foreach (Objet objet in _objets.Keys)
+        {
+            if (objet._name.Equals(objectName) && _objets[objet] > 0)
+            {
+                _im._effects[objectName](gameObject);
+                _objets[objet]--;
+                break;
+            }
+        }
     }
 
     public bool isFull()
