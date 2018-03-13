@@ -14,6 +14,7 @@ public class Brain : MonoBehaviour
     public Percept _percepts;
     public ActionUnit _actions;
     private string _currentAction;
+    public MessageManager _messageManager;
 
     [ExecuteInEditMode]
     void Start()
@@ -24,6 +25,7 @@ public class Brain : MonoBehaviour
         print("Nombre Instruction : " + _instructions.Count);
         _percepts = GetComponent<Percept>();
         _actions = GetComponent<ActionUnit>();
+        _messageManager = new MessageManager(this.gameObject);
     }
 
     void Update()
@@ -46,6 +48,7 @@ public class Brain : MonoBehaviour
 
     bool Verify(Instruction instruction)
     {
+
         foreach(string percept in instruction._listeStringPerceptsVoulus)
         {
             if ( !(_percepts._percepts.ContainsKey(percept) && _percepts._percepts[percept]()) ) { return false; }
